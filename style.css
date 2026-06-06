@@ -294,8 +294,7 @@ body {
 /* SEÇÕES CLARAS */
 
 .benefits-section,
-.security-section,
-.steps-section {
+.security-section {
   position: relative;
   width: 100%;
   min-height: 100dvh;
@@ -308,8 +307,7 @@ body {
 }
 
 .benefits-header,
-.security-header,
-.steps-header {
+.security-header {
   position: relative;
   z-index: 2;
   width: 100%;
@@ -319,8 +317,7 @@ body {
 }
 
 .benefits-header h2,
-.security-header h2,
-.steps-header h2 {
+.security-header h2 {
   color: #07111f;
   font-size: 31px;
   line-height: 1.08;
@@ -330,8 +327,7 @@ body {
 }
 
 .benefits-header p,
-.security-header p,
-.steps-header p {
+.security-header p {
   color: #607084;
   font-size: 14.2px;
   line-height: 1.55;
@@ -342,8 +338,7 @@ body {
 /* BENEFÍCIOS */
 
 .benefits-grid,
-.security-list,
-.steps-list {
+.security-list {
   position: relative;
   z-index: 2;
   width: 100%;
@@ -355,8 +350,7 @@ body {
 }
 
 .benefit-card,
-.security-item,
-.step-card {
+.security-item {
   position: relative;
   display: flex;
   gap: 14px;
@@ -382,8 +376,7 @@ body {
 }
 
 .benefit-card:active,
-.security-item:active,
-.step-card:active {
+.security-item:active {
   transform: scale(0.985);
 }
 
@@ -433,8 +426,7 @@ body {
 }
 
 .benefit-content h3,
-.security-item h3,
-.step-content h3 {
+.security-item h3 {
   color: #07111f;
   font-size: 16px;
   line-height: 1.2;
@@ -444,8 +436,7 @@ body {
 }
 
 .benefit-content p,
-.security-item p,
-.step-content p {
+.security-item p {
   color: #607084;
   font-size: 13px;
   line-height: 1.45;
@@ -533,8 +524,7 @@ body {
   color: #ffffff;
 }
 
-.dashboard-section::before,
-.form-section::before {
+.dashboard-section::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -546,8 +536,7 @@ body {
   pointer-events: none;
 }
 
-.dashboard-header,
-.form-header {
+.dashboard-header {
   position: relative;
   z-index: 2;
   width: 100%;
@@ -556,8 +545,7 @@ body {
   text-align: left;
 }
 
-.dashboard-header h2,
-.form-header h2 {
+.dashboard-header h2 {
   color: #ffffff;
   font-size: 34px;
   line-height: 1.06;
@@ -566,8 +554,7 @@ body {
   margin-bottom: 16px;
 }
 
-.dashboard-header p,
-.form-header p {
+.dashboard-header p {
   color: rgba(255, 255, 255, 0.66);
   font-size: 14.2px;
   line-height: 1.55;
@@ -862,192 +849,6 @@ body {
   width: 28%;
   height: 100%;
   background: linear-gradient(90deg, #18d6a3, #0d62ff);
-}
-
-/* COMO FUNCIONA */
-
-.steps-section {
-  padding-top: 78px;
-  padding-bottom: 78px;
-}
-
-.step-card {
-  align-items: flex-start;
-}
-
-.step-number {
-  flex: 0 0 auto;
-  width: 46px;
-  height: 46px;
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #07111f;
-  color: #ffffff;
-  font-size: 13px;
-  font-weight: 700;
-  box-shadow: 0 10px 24px rgba(7, 17, 31, 0.16);
-}
-
-/* FORMULÁRIO AZUL ESCURO */
-
-.form-section {
-  position: relative;
-  width: 100%;
-  min-height: 100dvh;
-  padding: 78px 22px 82px;
-  overflow: hidden;
-  background:
-    radial-gradient(circle at 20% 0%, rgba(42, 135, 255, 0.28), transparent 34%),
-    radial-gradient(circle at 100% 70%, rgba(23, 217, 163, 0.10), transparent 32%),
-    linear-gradient(180deg, #061a3a 0%, #041126 48%, #020817 100%);
-  color: #ffffff;
-}
-
-.form-section::after {
-  content: "";
-  position: absolute;
-  left: 24px;
-  right: 24px;
-  top: 34px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(111, 213, 255, 0.42), transparent);
-  pointer-events: none;
-}
-
-.lead-form {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 360px;
-  margin: 0 auto;
-  padding: 18px;
-  border-radius: 28px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.045));
-  border: 1px solid rgba(155, 215, 255, 0.18);
-  box-shadow:
-    0 24px 70px rgba(0, 0, 0, 0.32),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-}
-
-.lead-form label {
-  display: block;
-  color: rgba(255, 255, 255, 0.74);
-  font-size: 11px;
-  font-weight: 600;
-  margin-bottom: 13px;
-}
-
-.lead-form input,
-.lead-form select,
-.lead-form textarea {
-  width: 100%;
-  margin-top: 8px;
-  padding: 0 14px;
-  height: 46px;
-  border-radius: 15px;
-  outline: none;
-  color: #ffffff;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.085), rgba(255, 255, 255, 0.045));
-  border: 1px solid rgba(170, 220, 255, 0.16);
-  font-family: inherit;
-  font-size: 13px;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
-}
-
-.lead-form input:focus,
-.lead-form select:focus,
-.lead-form textarea:focus {
-  border-color: rgba(111, 213, 255, 0.48);
-  box-shadow:
-    0 0 0 3px rgba(111, 213, 255, 0.10),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06);
-}
-
-.lead-form textarea {
-  height: 92px;
-  padding-top: 13px;
-  resize: none;
-}
-
-.lead-form input::placeholder,
-.lead-form textarea::placeholder {
-  color: rgba(255, 255, 255, 0.36);
-}
-
-.lead-form select {
-  color: rgba(255, 255, 255, 0.88);
-}
-
-.lead-form option {
-  background: #061a3a;
-  color: #ffffff;
-}
-
-.lead-form button {
-  width: 100%;
-  height: 50px;
-  margin-top: 4px;
-  border: 0;
-  border-radius: 17px;
-  color: #ffffff;
-  background: linear-gradient(135deg, #0d62ff 0%, #1387ff 48%, #18d6a3 100%);
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: -0.2px;
-  font-family: inherit;
-  box-shadow:
-    0 14px 34px rgba(13, 98, 255, 0.28),
-    0 0 26px rgba(24, 214, 163, 0.10);
-}
-
-.lead-form button:active {
-  transform: scale(0.98);
-}
-
-/* FOOTER */
-
-.footer {
-  padding: 42px 22px 36px;
-  background: #020817;
-  color: #ffffff;
-  text-align: center;
-}
-
-.footer img {
-  width: 92px;
-  height: auto;
-  margin-bottom: 18px;
-  opacity: 0.92;
-}
-
-.footer p {
-  max-width: 280px;
-  margin: 0 auto;
-  color: rgba(255, 255, 255, 0.54);
-  font-size: 12px;
-  line-height: 1.45;
-}
-
-.footer-line {
-  width: 100%;
-  max-width: 320px;
-  height: 1px;
-  margin: 24px auto 18px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.14), transparent);
-}
-
-.footer small {
-  color: rgba(255, 255, 255, 0.44);
-  font-size: 11px;
-}
-
-.footer strong {
-  color: rgba(255, 255, 255, 0.78);
-  font-weight: 600;
 }
 
 /* ANIMAÇÕES */
