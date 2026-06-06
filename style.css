@@ -4,6 +4,51 @@
   box-sizing: border-box;
 }
 
+/* ==================================================
+   COORDENADAS — MEXA SOMENTE AQUI
+================================================== */
+
+:root {
+  /* LOGO */
+  --logo-x: 64%;
+  --logo-y: 25%;
+
+  /* HEADLINE */
+  --headline-x: 64%;
+  --headline-y: 35%;
+
+  /* SUBHEADLINE */
+  --subheadline-x: 64%;
+  --subheadline-y: 49%;
+
+  /* BOTÃO */
+  --button-x: 64%;
+  --button-y: 57%;
+
+  /* CARD PIX */
+  --pix-x: 45%;
+  --pix-y: 62%;
+
+  /* CARD CARTÃO */
+  --cartao-x: 12%;
+  --cartao-y: 59%;
+
+  /* CARD APROVAÇÃO */
+  --aprovacao-x: 35%;
+  --aprovacao-y: 70%;
+
+  /* TAMANHOS */
+  --logo-size: 88px;
+  --headline-size: 25px;
+  --subheadline-size: 10.6px;
+  --button-width: 248px;
+  --button-height: 44px;
+}
+
+/* ==================================================
+   BASE
+================================================== */
+
 html,
 body {
   width: 100%;
@@ -17,10 +62,6 @@ body {
 body {
   min-height: 100dvh;
 }
-
-/* =========================
-   HERO MOBILE
-========================= */
 
 .hero {
   position: relative;
@@ -54,52 +95,50 @@ body {
     );
 }
 
-/* =========================
-   CONTEÚDO PRINCIPAL
-========================= */
+/* ==================================================
+   CONTEÚDO
+================================================== */
 
 .hero-content {
   position: absolute;
+  inset: 0;
   z-index: 3;
-
-  top: 42%;
-  right: 18px;
-  transform: translateY(-50%);
-
-  width: 315px;
-  max-width: calc(100vw - 36px);
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  pointer-events: none;
 }
 
 .logo {
-  width: 98px;
-  height: auto;
-  display: block;
+  position: absolute;
 
-  margin-bottom: 22px;
+  left: var(--logo-x);
+  top: var(--logo-y);
+  transform: translate(-50%, -50%);
+
+  width: var(--logo-size);
+  height: auto;
 
   opacity: 0.96;
   filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.08));
 }
 
-/* =========================
+/* ==================================================
    HEADLINE
-========================= */
+================================================== */
 
 h1 {
-  width: 100%;
-  margin-bottom: 15px;
+  position: absolute;
+
+  left: var(--headline-x);
+  top: var(--headline-y);
+  transform: translate(-50%, -50%);
+
+  width: 300px;
 
   color: #ffffff;
 
-  font-size: 27px;
+  font-size: var(--headline-size);
   line-height: 1.10;
   font-weight: 400;
-  letter-spacing: -1.1px;
+  letter-spacing: -1px;
 
   text-align: center;
 
@@ -113,18 +152,23 @@ h1 span {
   white-space: nowrap;
 }
 
-/* =========================
+/* ==================================================
    SUBHEADLINE
-========================= */
+================================================== */
 
 p {
-  width: 100%;
-  margin-bottom: 25px;
+  position: absolute;
+
+  left: var(--subheadline-x);
+  top: var(--subheadline-y);
+  transform: translate(-50%, -50%);
+
+  width: 300px;
 
   color: rgba(255, 255, 255, 0.66);
 
-  font-size: 11.7px;
-  line-height: 1.43;
+  font-size: var(--subheadline-size);
+  line-height: 1.42;
   font-weight: 400;
   letter-spacing: -0.05px;
 
@@ -136,30 +180,37 @@ p span {
   white-space: nowrap;
 }
 
-/* =========================
+/* ==================================================
    BOTÃO
-========================= */
+================================================== */
 
 .cta-button {
-  position: relative;
+  position: absolute;
+
+  left: var(--button-x);
+  top: var(--button-y);
+  transform: translate(-50%, -50%);
+
   isolation: isolate;
   overflow: visible;
 
-  width: 268px;
-  height: 48px;
+  width: var(--button-width);
+  height: var(--button-height);
 
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 19px;
+  gap: 18px;
+
+  pointer-events: auto;
 
   text-decoration: none;
 
-  border-radius: 23px;
+  border-radius: 22px;
 
   color: #ffffff;
 
-  font-size: 14.4px;
+  font-size: 13.8px;
   font-weight: 600;
   letter-spacing: -0.18px;
 
@@ -181,12 +232,6 @@ p span {
 
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-
-  transition: transform 0.25s ease;
-}
-
-.cta-button:active {
-  transform: scale(0.98);
 }
 
 .cta-button span {
@@ -201,14 +246,13 @@ p span {
   transform: translateY(-1px);
 }
 
-/* EFEITO TECNOLÓGICO EM VOLTA DO BOTÃO */
-
+/* efeito tecnológico externo */
 .cta-button::before {
   content: "";
   position: absolute;
 
   inset: -2px;
-  border-radius: 25px;
+  border-radius: 24px;
   padding: 2px;
 
   z-index: 1;
@@ -243,7 +287,7 @@ p span {
   position: absolute;
 
   inset: -8px;
-  border-radius: 29px;
+  border-radius: 28px;
 
   z-index: 0;
   pointer-events: none;
@@ -269,22 +313,22 @@ p span {
   }
 }
 
-/* =========================
+/* ==================================================
    CARDS FLUTUANTES
-========================= */
+================================================== */
 
 .floating-card {
   position: absolute;
   z-index: 2;
 
-  min-width: 78px;
-  height: 40px;
+  width: 88px;
+  height: 42px;
 
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 7px;
 
-  padding: 7px 8px;
+  padding: 7px 9px;
 
   border-radius: 12px;
 
@@ -309,6 +353,7 @@ p span {
 
 .floating-card strong {
   display: block;
+
   font-size: 9px;
   line-height: 1;
   font-weight: 600;
@@ -316,10 +361,13 @@ p span {
 
 .floating-card small {
   display: block;
+
   margin-top: 3px;
-  font-size: 7.6px;
+
+  font-size: 7.4px;
   line-height: 1;
   font-weight: 400;
+
   color: rgba(255, 255, 255, 0.66);
 }
 
@@ -328,246 +376,83 @@ p span {
   align-items: center;
   justify-content: center;
 
-  width: 14px;
-  height: 14px;
+  width: 13px;
+  height: 13px;
 
-  font-size: 9px;
+  font-size: 8px;
   color: #6bd8ff;
 
   text-shadow: 0 0 10px rgba(70, 190, 255, 0.85);
 }
 
+/* ==================================================
+   COORDENADAS DOS CARDS
+================================================== */
+
 .floating-card-pix {
-  left: 34%;
-  top: 43.5%;
-  animation: floatOne 5.5s ease-in-out infinite;
+  left: var(--pix-x);
+  top: var(--pix-y);
+  transform: translate(-50%, -50%);
+  animation: floatPix 5.5s ease-in-out infinite;
 }
 
 .floating-card-card {
-  left: 5%;
-  top: 53%;
-  animation: floatTwo 6.2s ease-in-out infinite;
+  left: var(--cartao-x);
+  top: var(--cartao-y);
+  transform: translate(-50%, -50%);
+  animation: floatCard 6.2s ease-in-out infinite;
 }
 
 .floating-card-rate {
-  left: 30%;
-  top: 64%;
-  animation: floatThree 5.8s ease-in-out infinite;
+  left: var(--aprovacao-x);
+  top: var(--aprovacao-y);
+  transform: translate(-50%, -50%);
+  animation: floatRate 5.8s ease-in-out infinite;
 }
 
-@keyframes floatOne {
+@keyframes floatPix {
   0%, 100% {
-    transform: translateY(0);
+    transform: translate(-50%, -50%) translateY(0);
   }
 
   50% {
-    transform: translateY(-8px);
+    transform: translate(-50%, -50%) translateY(-8px);
   }
 }
 
-@keyframes floatTwo {
+@keyframes floatCard {
   0%, 100% {
-    transform: translateY(0);
+    transform: translate(-50%, -50%) translateY(0);
   }
 
   50% {
-    transform: translateY(7px);
+    transform: translate(-50%, -50%) translateY(7px);
   }
 }
 
-@keyframes floatThree {
+@keyframes floatRate {
   0%, 100% {
-    transform: translateY(0);
+    transform: translate(-50%, -50%) translateY(0);
   }
 
   50% {
-    transform: translateY(-6px);
+    transform: translate(-50%, -50%) translateY(-6px);
   }
 }
 
-/* =========================
-   IPHONE MENOR
-========================= */
-
-@media (max-width: 390px) {
-  .hero-content {
-    top: 42%;
-    right: 16px;
-
-    width: 300px;
-    max-width: calc(100vw - 32px);
-  }
-
-  .logo {
-    width: 90px;
-    margin-bottom: 20px;
-  }
-
-  h1 {
-    font-size: 25.5px;
-    line-height: 1.10;
-    letter-spacing: -1px;
-    margin-bottom: 13px;
-  }
-
-  p {
-    font-size: 10.8px;
-    line-height: 1.42;
-    margin-bottom: 22px;
-  }
-
-  .cta-button {
-    width: 252px;
-    height: 46px;
-
-    border-radius: 22px;
-
-    font-size: 13.8px;
-    gap: 17px;
-  }
-
-  .cta-button::before {
-    border-radius: 24px;
-  }
-
-  .cta-button::after {
-    border-radius: 27px;
-  }
-
-  .cta-button .arrow {
-    font-size: 20px;
-  }
-
-  .floating-card {
-    min-width: 74px;
-    height: 38px;
-    padding: 6px 7px;
-  }
-
-  .floating-card strong {
-    font-size: 8.6px;
-  }
-
-  .floating-card small {
-    font-size: 7.2px;
-  }
-
-  .floating-icon {
-    width: 13px;
-    height: 13px;
-    font-size: 8px;
-  }
-
-  .floating-card-pix {
-    left: 34%;
-    top: 43.5%;
-  }
-
-  .floating-card-card {
-    left: 5%;
-    top: 53%;
-  }
-
-  .floating-card-rate {
-    left: 30%;
-    top: 64%;
-  }
-}
-
-/* =========================
+/* ==================================================
    SAFARI COM BARRA / TELA BAIXA
-========================= */
+================================================== */
 
 @media (max-height: 760px) {
-  .hero-content {
-    top: 41.5%;
-  }
+  :root {
+    --logo-y: 24%;
+    --headline-y: 34%;
+    --subheadline-y: 48%;
+    --button-y: 56%;
 
-  .logo {
-    margin-bottom: 18px;
-  }
-
-  h1 {
-    margin-bottom: 12px;
-  }
-
-  p {
-    margin-bottom: 20px;
-  }
-
-  .cta-button {
-    height: 44px;
-  }
-}
-
-/* =========================
-   AJUSTE FINAL DE POSIÇÃO
-   MOBILE HERO
-========================= */
-
-/* Move logo, headline, subheadline e botão mais para direita e mais para baixo */
-.hero-content {
-  top: 45%;
-  right: 8px;
-}
-
-/* Card Cartão: mais para baixo */
-.floating-card-card {
-  left: 5%;
-  top: 58%;
-}
-
-/* Card Pix: perto do celular/mão dela */
-.floating-card-pix {
-  left: 39%;
-  top: 57%;
-}
-
-/* Card 98%: abaixo da mão dela */
-.floating-card-rate {
-  left: 31%;
-  top: 68%;
-}
-
-/* Ajuste específico para iPhone menor */
-@media (max-width: 390px) {
-  .hero-content {
-    top: 45%;
-    right: 8px;
-  }
-
-  .floating-card-card {
-    left: 5%;
-    top: 58%;
-  }
-
-  .floating-card-pix {
-    left: 39%;
-    top: 57%;
-  }
-
-  .floating-card-rate {
-    left: 31%;
-    top: 68%;
-  }
-}
-
-/* Ajuste para Safari com barra inferior */
-@media (max-height: 760px) {
-  .hero-content {
-    top: 44.5%;
-    right: 8px;
-  }
-
-  .floating-card-card {
-    top: 58%;
-  }
-
-  .floating-card-pix {
-    top: 57%;
-  }
-
-  .floating-card-rate {
-    top: 68%;
+    --pix-y: 62%;
+    --cartao-y: 59%;
+    --aprovacao-y: 70%;
   }
 }
