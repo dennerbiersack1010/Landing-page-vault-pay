@@ -11,19 +11,19 @@
 :root {
   /* LOGO */
   --logo-x: 69%;
-  --logo-y: 35%;
+  --logo-y: 55%;
 
   /* HEADLINE */
   --headline-x: 69%;
-  --headline-y: 40%;
+  --headline-y: 60%;
 
   /* SUBHEADLINE */
   --subheadline-x: 69%;
-  --subheadline-y: 54%;
+  --subheadline-y: 74%;
 
   /* BOTÃO */
   --button-x: 69%;
-  --button-y: 62%;
+  --button-y: 82%;
 
   /* CARD PIX */
   --pix-x: 10%;
