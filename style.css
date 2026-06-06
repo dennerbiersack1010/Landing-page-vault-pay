@@ -294,7 +294,8 @@ body {
 /* SEÇÕES CLARAS */
 
 .benefits-section,
-.security-section {
+.security-section,
+.steps-section {
   position: relative;
   width: 100%;
   min-height: 100dvh;
@@ -307,7 +308,8 @@ body {
 }
 
 .benefits-header,
-.security-header {
+.security-header,
+.steps-header {
   position: relative;
   z-index: 2;
   width: 100%;
@@ -317,7 +319,8 @@ body {
 }
 
 .benefits-header h2,
-.security-header h2 {
+.security-header h2,
+.steps-header h2 {
   color: #07111f;
   font-size: 31px;
   line-height: 1.08;
@@ -327,7 +330,8 @@ body {
 }
 
 .benefits-header p,
-.security-header p {
+.security-header p,
+.steps-header p {
   color: #607084;
   font-size: 14.2px;
   line-height: 1.55;
@@ -338,7 +342,8 @@ body {
 /* BENEFÍCIOS */
 
 .benefits-grid,
-.security-list {
+.security-list,
+.steps-list {
   position: relative;
   z-index: 2;
   width: 100%;
@@ -350,7 +355,8 @@ body {
 }
 
 .benefit-card,
-.security-item {
+.security-item,
+.step-card {
   position: relative;
   display: flex;
   gap: 14px;
@@ -376,7 +382,8 @@ body {
 }
 
 .benefit-card:active,
-.security-item:active {
+.security-item:active,
+.step-card:active {
   transform: scale(0.985);
 }
 
@@ -426,7 +433,8 @@ body {
 }
 
 .benefit-content h3,
-.security-item h3 {
+.security-item h3,
+.step-content h3 {
   color: #07111f;
   font-size: 16px;
   line-height: 1.2;
@@ -436,7 +444,8 @@ body {
 }
 
 .benefit-content p,
-.security-item p {
+.security-item p,
+.step-content p {
   color: #607084;
   font-size: 13px;
   line-height: 1.45;
@@ -849,6 +858,169 @@ body {
   width: 28%;
   height: 100%;
   background: linear-gradient(90deg, #18d6a3, #0d62ff);
+}
+
+/* SEÇÃO FINAL - COMO FUNCIONA */
+
+.steps-section {
+  min-height: auto;
+  padding-bottom: 86px;
+}
+
+.steps-section::before {
+  content: "";
+  position: absolute;
+  top: 90px;
+  right: -90px;
+  width: 210px;
+  height: 210px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(13, 98, 255, 0.12), transparent 66%);
+  pointer-events: none;
+}
+
+.step-card {
+  align-items: flex-start;
+}
+
+.step-card::before {
+  content: "";
+  position: absolute;
+  left: 39px;
+  top: 64px;
+  bottom: -16px;
+  width: 1px;
+  background: linear-gradient(180deg, rgba(13, 98, 255, 0.22), transparent);
+}
+
+.step-card:last-child::before {
+  display: none;
+}
+
+.step-number {
+  position: relative;
+  z-index: 2;
+  flex: 0 0 auto;
+  width: 46px;
+  height: 46px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  background:
+    linear-gradient(
+      135deg,
+      #07111f 0%,
+      #0d62ff 100%
+    );
+  box-shadow:
+    0 10px 24px rgba(7, 17, 31, 0.16),
+    0 0 18px rgba(13, 98, 255, 0.16);
+}
+
+.step-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.final-cta-card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 360px;
+  margin: 22px auto 0;
+  padding: 24px 18px;
+  border-radius: 28px;
+  overflow: hidden;
+  color: #ffffff;
+  background:
+    radial-gradient(circle at top right, rgba(24, 214, 163, 0.16), transparent 42%),
+    linear-gradient(180deg, #07111f 0%, #041126 100%);
+  border: 1px solid rgba(120, 170, 255, 0.14);
+  box-shadow:
+    0 18px 42px rgba(7, 17, 31, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.final-cta-card::before {
+  content: "";
+  position: absolute;
+  top: -70px;
+  right: -70px;
+  width: 170px;
+  height: 170px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(13, 98, 255, 0.28), transparent 68%);
+  pointer-events: none;
+}
+
+.final-cta-card > span {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  height: 26px;
+  padding: 0 10px;
+  margin-bottom: 14px;
+  border-radius: 999px;
+  color: #6fd5ff;
+  font-size: 10.5px;
+  font-weight: 650;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.final-cta-card h3 {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+  font-size: 24px;
+  line-height: 1.08;
+  font-weight: 650;
+  letter-spacing: -1px;
+  margin-bottom: 12px;
+}
+
+.final-cta-card p {
+  position: relative;
+  z-index: 2;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 13px;
+  line-height: 1.48;
+  margin-bottom: 18px;
+}
+
+.final-cta-button {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+  border-radius: 17px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  background:
+    linear-gradient(
+      135deg,
+      #0d62ff 0%,
+      #1387ff 54%,
+      #18d6a3 100%
+    );
+  box-shadow:
+    0 14px 34px rgba(13, 98, 255, 0.24),
+    0 0 26px rgba(24, 214, 163, 0.10);
+}
+
+.final-cta-button:active {
+  transform: scale(0.98);
 }
 
 /* ANIMAÇÕES */
