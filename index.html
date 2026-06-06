@@ -13,7 +13,7 @@
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="./style.css?v=1001" />
+  <link rel="stylesheet" href="./style.css?v=1100" />
 </head>
 
 <body>
@@ -54,7 +54,7 @@
         <span>preparado para vender todos os dias.</span>
       </p>
 
-      <a href="#" class="cta-button">
+      <a href="#formulario" class="cta-button">
         <span>Começar agora</span>
         <span class="arrow">→</span>
       </a>
@@ -414,11 +414,73 @@
         Uma experiência de pagamento mais rápida, segura e preparada para negócios que não podem perder conversões.
       </p>
 
-      <a href="#" class="final-cta-button">
+      <a href="#formulario" class="final-cta-button">
         Começar agora
         <span>→</span>
       </a>
     </div>
+  </section>
+
+  <!-- FORMULÁRIO -->
+  <section class="form-section" id="formulario">
+    <div class="form-header">
+      <span class="dark-section-tag">Solicite acesso</span>
+
+      <h2>Prepare seu checkout para vender mais.</h2>
+
+      <p>
+        Preencha os dados abaixo e receba uma análise da melhor estrutura de pagamento para sua operação.
+      </p>
+    </div>
+
+    <form class="lead-form">
+      <label>
+        Nome
+        <input type="text" name="nome" placeholder="Seu nome" required>
+      </label>
+
+      <label>
+        WhatsApp
+        <input type="tel" name="whatsapp" placeholder="(00) 00000-0000" required>
+      </label>
+
+      <label>
+        E-mail
+        <input type="email" name="email" placeholder="seu@email.com">
+      </label>
+
+      <label>
+        Tipo de negócio
+        <select name="negocio" required>
+          <option value="">Selecione uma opção</option>
+          <option value="infoproduto">Infoproduto</option>
+          <option value="ecommerce">E-commerce</option>
+          <option value="servicos">Serviços</option>
+          <option value="outro">Outro</option>
+        </select>
+      </label>
+
+      <label>
+        Volume mensal aproximado
+        <select name="volume" required>
+          <option value="">Selecione uma faixa</option>
+          <option value="ate-10k">Até R$10 mil/mês</option>
+          <option value="10k-50k">R$10 mil a R$50 mil/mês</option>
+          <option value="50k-200k">R$50 mil a R$200 mil/mês</option>
+          <option value="acima-200k">Acima de R$200 mil/mês</option>
+        </select>
+      </label>
+
+      <label>
+        Mensagem
+        <textarea name="mensagem" placeholder="Conte rapidamente sobre sua operação"></textarea>
+      </label>
+
+      <button type="submit">
+        Enviar solicitação
+        <span>→</span>
+      </button>
+    </form>
   </section>
 
 </body>
