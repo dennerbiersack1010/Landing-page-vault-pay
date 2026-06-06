@@ -34,7 +34,7 @@
   --cartao-y: 59%;
 
   /* CARD APROVAÇÃO */
-  --aprovacao-x: 20%;
+  --aprovacao-x: 30%;
   --aprovacao-y: 70%;
 
   /* TAMANHOS */
@@ -42,7 +42,7 @@
   --headline-size: 25px;
   --subheadline-size: 10.6px;
   --button-width: 248px;
-  --button-height: 44px;
+  --button-height: 30px;
 }
 
 /* ==================================================
