@@ -24,12 +24,6 @@ body {
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
-
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-
-  padding: 0 20px;
 }
 
 .hero-overlay {
@@ -52,65 +46,71 @@ body {
     );
 }
 
-/* BLOCO PRINCIPAL */
+/* BLOCO MOBILE */
 
 .hero-content {
-  position: relative;
+  position: absolute;
   z-index: 3;
 
-  width: 56%;
-  max-width: 290px;
+  top: 43%;
+  right: 16px;
+  transform: translateY(-50%);
+
+  width: 330px;
+  max-width: calc(100vw - 44px);
 
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-
-  margin-left: auto;
-
-  transform: translateY(34px);
 }
 
 .logo {
-  width: 94px;
+  width: 102px;
   height: auto;
   display: block;
-  margin-bottom: 18px;
+  margin-bottom: 24px;
   opacity: 0.96;
 }
 
-/* HEADLINE */
+/* HEADLINE COM QUEBRA FIXA */
 
 h1 {
   width: 100%;
-  max-width: 290px;
+  margin-bottom: 18px;
 
-  font-size: 26px;
+  color: #ffffff;
+  font-size: 31px;
   line-height: 1.12;
   font-weight: 400;
-  letter-spacing: -1px;
-  color: #ffffff;
-
-  margin-bottom: 16px;
+  letter-spacing: -1.35px;
 
   text-shadow:
     0 0 16px rgba(0, 92, 255, 0.10),
     0 0 28px rgba(0, 92, 255, 0.08);
 }
 
-/* SUBHEADLINE */
+h1 span {
+  display: block;
+  white-space: nowrap;
+}
+
+/* SUBHEADLINE COM QUEBRA FIXA */
 
 p {
   width: 100%;
-  max-width: 265px;
+  margin-bottom: 32px;
 
-  font-size: 11.6px;
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 13px;
   line-height: 1.45;
   font-weight: 400;
-  letter-spacing: -0.08px;
-  color: rgba(255, 255, 255, 0.66);
+  letter-spacing: -0.1px;
+}
 
-  margin-bottom: 26px;
+p span {
+  display: block;
+  white-space: nowrap;
 }
 
 /* BOTÃO */
@@ -120,21 +120,21 @@ p {
   isolation: isolate;
   overflow: visible;
 
-  width: 100%;
-  max-width: 255px;
-  height: 52px;
+  width: 310px;
+  max-width: 100%;
+  height: 58px;
 
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 24px;
 
   text-decoration: none;
   border-radius: 999px;
 
-  font-size: 14.8px;
+  font-size: 16.5px;
   font-weight: 600;
-  letter-spacing: -0.2px;
+  letter-spacing: -0.25px;
   color: #ffffff;
 
   background:
@@ -155,12 +155,6 @@ p {
 
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-
-  transition: transform 0.25s ease;
-}
-
-.cta-button:active {
-  transform: scale(0.97);
 }
 
 .cta-button span {
@@ -169,13 +163,13 @@ p {
 }
 
 .cta-button .arrow {
-  font-size: 23px;
+  font-size: 25px;
   line-height: 1;
   font-weight: 300;
   transform: translateY(-1px);
 }
 
-/* NEON EXTERNO */
+/* NEON SÓ NA BORDA EXTERNA */
 
 .cta-button::before {
   content: "";
@@ -214,6 +208,7 @@ p {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -233,7 +228,6 @@ p {
   gap: 6px;
 
   padding: 7px 8px;
-
   border-radius: 12px;
 
   background:
@@ -307,6 +301,7 @@ p {
   0%, 100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-8px);
   }
@@ -316,6 +311,7 @@ p {
   0%, 100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(7px);
   }
@@ -325,100 +321,73 @@ p {
   0%, 100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-6px);
   }
 }
 
-/* IPHONE MENOR */
+/* iPHONE MENOR */
 
 @media (max-width: 390px) {
-  .hero {
-    padding: 0 18px;
-  }
-
   .hero-content {
-    width: 56%;
-    max-width: 270px;
-    transform: translateY(30px);
+    top: 43%;
+    right: 14px;
+
+    width: 315px;
+    max-width: calc(100vw - 36px);
   }
 
   .logo {
-    width: 88px;
+    width: 92px;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 28.5px;
+    line-height: 1.12;
+    letter-spacing: -1.2px;
+    margin-bottom: 16px;
+  }
+
+  p {
+    font-size: 11.8px;
+    line-height: 1.45;
+    margin-bottom: 28px;
+  }
+
+  .cta-button {
+    width: 292px;
+    height: 54px;
+    font-size: 15.5px;
+    gap: 22px;
+  }
+
+  .cta-button .arrow {
+    font-size: 23px;
+  }
+}
+
+/* iPHONE BAIXO / SAFARI COM BARRA */
+
+@media (max-height: 760px) {
+  .hero-content {
+    top: 42%;
+  }
+
+  .logo {
     margin-bottom: 16px;
   }
 
   h1 {
-    max-width: 270px;
-    font-size: 24px;
-    line-height: 1.12;
-    letter-spacing: -0.9px;
     margin-bottom: 14px;
   }
 
   p {
-    max-width: 248px;
-    font-size: 10.9px;
-    line-height: 1.43;
-    margin-bottom: 24px;
+    margin-bottom: 22px;
   }
 
   .cta-button {
-    max-width: 240px;
-    height: 50px;
-    font-size: 14px;
-    gap: 18px;
-  }
-
-  .cta-button .arrow {
-    font-size: 22px;
-  }
-
-  .floating-card {
-    min-width: 74px;
-    height: 38px;
-    padding: 6px 7px;
-  }
-
-  .floating-card strong {
-    font-size: 8.6px;
-  }
-
-  .floating-card small {
-    font-size: 7.2px;
-  }
-
-  .card-icon {
-    width: 13px;
-    height: 13px;
-    font-size: 8px;
-  }
-}
-
-@media (min-height: 820px) {
-  .hero-content {
-    transform: translateY(36px);
-  }
-}
-
-@media (max-height: 720px) {
-  .hero-content {
-    transform: translateY(20px);
-  }
-
-  .logo {
-    margin-bottom: 14px;
-  }
-
-  h1 {
-    margin-bottom: 13px;
-  }
-
-  p {
-    margin-bottom: 20px;
-  }
-
-  .cta-button {
-    height: 48px;
+    height: 52px;
   }
 }
