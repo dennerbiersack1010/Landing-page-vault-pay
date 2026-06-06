@@ -1,41 +1,23 @@
-const CACHE_NAME = "vault-pay-cache-v1";
-
-const FILES_TO_CACHE = [
-  "/",
-  "/index.html",
-  "/style.css",
-  "/script.js",
-  "/manifest.json",
-  "/assets/logo-vaultpay.png",
-  "/assets/BG-hero.PNG"
-];
+const CACHE_VERSION = "vault-pay-cache-v2";
 
 self.addEventListener("install", (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(FILES_TO_CACHE);
-    })
-  );
+  self.skipWaiting();
 });
 
 self.addEventListener("activate", (event) => {
   event.waitUntil(
-    caches.keys().then((keys) => {
+    caches.keys().then((cacheNames) => {
       return Promise.all(
-        keys.map((key) => {
-          if (key !== CACHE_NAME) {
-            return caches.delete(key);
-          }
+        cacheNames.map((cacheName) => {
+          return caches.delete(cacheName);
         })
       );
+    }).then(() => {
+      return self.clients.claim();
     })
   );
 });
 
 self.addEventListener("fetch", (event) => {
-  event.respondWith(
-    caches.match(event.request).then((cachedFile) => {
-      return cachedFile || fetch(event.request);
-    })
-  );
+  event.respondWith(fetch(event.request));
 });
