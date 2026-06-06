@@ -92,7 +92,6 @@ body {
 
 h1 {
   width: 100%;
-
   margin-bottom: 14px;
 
   color: #ffffff;
@@ -118,7 +117,6 @@ h1 span {
 
 p {
   width: 100%;
-
   margin-bottom: 24px;
 
   color: rgba(255, 255, 255, 0.66);
@@ -135,7 +133,7 @@ p span {
 }
 
 /* =========================
-   BOTÃO GLASS
+   BOTÃO TECNOLÓGICO
 ========================= */
 
 .cta-button {
@@ -143,82 +141,83 @@ p span {
   isolation: isolate;
   overflow: visible;
 
-  width: 286px;
+  width: 252px;
   max-width: 100%;
-  height: 52px;
+  height: 48px;
 
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 18px;
 
   text-decoration: none;
-
-  border-radius: 999px;
+  border-radius: 24px;
 
   color: #ffffff;
 
-  font-size: 15px;
+  font-size: 14.2px;
   font-weight: 600;
-  letter-spacing: -0.2px;
+  letter-spacing: -0.18px;
 
   background:
     linear-gradient(
       135deg,
-      rgba(255, 255, 255, 0.11) 0%,
-      rgba(255, 255, 255, 0.035) 48%,
-      rgba(0, 95, 255, 0.06) 100%
+      rgba(255, 255, 255, 0.10) 0%,
+      rgba(255, 255, 255, 0.028) 52%,
+      rgba(0, 95, 255, 0.05) 100%
     );
 
-  border: 1px solid rgba(194, 225, 255, 0.48);
+  border: 1px solid rgba(184, 219, 255, 0.44);
 
   box-shadow:
-    inset 0 1px 1px rgba(255, 255, 255, 0.16),
-    inset 0 -1px 1px rgba(0, 110, 255, 0.12),
-    0 0 14px rgba(41, 137, 255, 0.16),
-    0 10px 24px rgba(0, 0, 0, 0.20);
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    inset 0 -1px 0 rgba(0, 110, 255, 0.10),
+    0 0 0 1px rgba(82, 158, 255, 0.10),
+    0 8px 20px rgba(0, 0, 0, 0.20);
 
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
 
-  transition: transform 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .cta-button:active {
-  transform: scale(0.97);
+  transform: scale(0.98);
 }
 
 .cta-button span {
   position: relative;
-  z-index: 3;
+  z-index: 4;
 }
 
 .cta-button .arrow {
-  font-size: 22px;
+  font-size: 21px;
   line-height: 1;
   font-weight: 300;
   transform: translateY(-1px);
 }
 
-/* Neon azul circulando somente na borda externa */
-
+/* anel tecnológico externo */
 .cta-button::before {
   content: "";
   position: absolute;
-
   inset: -2px;
-  border-radius: inherit;
+  border-radius: 26px;
   padding: 2px;
+  z-index: 1;
+  pointer-events: none;
 
   background:
     conic-gradient(
       from 0deg,
       transparent 0deg,
-      transparent 305deg,
-      rgba(65, 165, 255, 0) 322deg,
-      rgba(65, 165, 255, 0.95) 342deg,
-      rgba(130, 225, 255, 1) 352deg,
-      rgba(65, 165, 255, 0) 360deg
+      transparent 292deg,
+      rgba(70, 170, 255, 0) 312deg,
+      rgba(70, 170, 255, 0.95) 334deg,
+      rgba(130, 225, 255, 1) 348deg,
+      rgba(70, 170, 255, 0) 360deg
     );
 
   -webkit-mask:
@@ -232,8 +231,42 @@ p span {
   mask-composite: exclude;
 
   animation: borderSpin 3s linear infinite;
+}
+
+/* glow externo sutil */
+.cta-button::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 30px;
+  z-index: 0;
   pointer-events: none;
-  z-index: 1;
+
+  background:
+    radial-gradient(circle at center, rgba(68, 164, 255, 0.18), transparent 62%);
+  filter: blur(10px);
+  opacity: 0.9;
+}
+
+/* traços tecnológicos nas laterais */
+.cta-button .tech-line-left,
+.cta-button .tech-line-right {
+  position: absolute;
+  top: 50%;
+  width: 10px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #7fd5ff, transparent);
+  transform: translateY(-50%);
+  z-index: 3;
+  opacity: 0.9;
+}
+
+.cta-button .tech-line-left {
+  left: -8px;
+}
+
+.cta-button .tech-line-right {
+  right: -8px;
 }
 
 @keyframes borderSpin {
@@ -286,7 +319,6 @@ p span {
 
 .floating-card strong {
   display: block;
-
   font-size: 9px;
   line-height: 1;
   font-weight: 600;
@@ -294,13 +326,10 @@ p span {
 
 .floating-card small {
   display: block;
-
   margin-top: 3px;
-
   font-size: 7.6px;
   line-height: 1;
   font-weight: 400;
-
   color: rgba(255, 255, 255, 0.66);
 }
 
@@ -394,19 +423,28 @@ p span {
   p {
     font-size: 10.9px;
     line-height: 1.42;
-    margin-bottom: 22px;
+    margin-bottom: 20px;
   }
 
   .cta-button {
-    width: 270px;
-    height: 50px;
+    width: 238px;
+    height: 46px;
+    border-radius: 22px;
 
-    font-size: 14.2px;
-    gap: 18px;
+    font-size: 13.6px;
+    gap: 16px;
+  }
+
+  .cta-button::before {
+    border-radius: 24px;
+  }
+
+  .cta-button::after {
+    border-radius: 28px;
   }
 
   .cta-button .arrow {
-    font-size: 21px;
+    font-size: 20px;
   }
 
   .floating-card {
@@ -463,11 +501,11 @@ p span {
   }
 
   p {
-    margin-bottom: 20px;
+    margin-bottom: 18px;
   }
 
   .cta-button {
-    height: 48px;
+    height: 44px;
   }
 }
 
