@@ -15,15 +15,15 @@
 
   /* HEADLINE */
   --headline-x: 64%;
-  --headline-y: 35%;
+  --headline-y: 30%;
 
   /* SUBHEADLINE */
   --subheadline-x: 64%;
-  --subheadline-y: 49%;
+  --subheadline-y: 44%;
 
   /* BOTÃO */
   --button-x: 64%;
-  --button-y: 57%;
+  --button-y: 52%;
 
   /* CARD PIX */
   --pix-x: 10%;
@@ -41,8 +41,8 @@
   --logo-size: 88px;
   --headline-size: 25px;
   --subheadline-size: 10.6px;
-  --button-width: 248px;
-  --button-height: 30px;
+  --button-width: 200px;
+  --button-height: 40px;
 }
 
 /* ==================================================
