@@ -247,97 +247,60 @@ p span {
 }
 
 /* ==================================================
-   EFEITO TECNOLÓGICO DO BOTÃO
-   Linhas externas percorrendo a borda
+   EFEITO EXTERNO DO BOTÃO
+   Neon lento somente por fora
 ================================================== */
 
 .cta-button::before {
   content: "";
   position: absolute;
 
-  inset: -4px;
-  border-radius: 24px;
+  inset: -3px;
+  border-radius: 23px;
+  padding: 2px;
 
   z-index: 1;
   pointer-events: none;
 
   background:
-    linear-gradient(90deg, transparent, rgba(83, 190, 255, 1), transparent)
-      top left / 70px 2px no-repeat,
+    conic-gradient(
+      from 0deg,
+      transparent 0deg,
+      transparent 265deg,
+      rgba(70, 185, 255, 0) 295deg,
+      rgba(70, 185, 255, 0.95) 325deg,
+      rgba(170, 235, 255, 1) 342deg,
+      rgba(70, 185, 255, 0) 360deg
+    );
 
-    linear-gradient(180deg, transparent, rgba(83, 190, 255, 1), transparent)
-      top right / 2px 26px no-repeat,
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
 
-    linear-gradient(270deg, transparent, rgba(83, 190, 255, 1), transparent)
-      bottom right / 70px 2px no-repeat,
-
-    linear-gradient(0deg, transparent, rgba(83, 190, 255, 1), transparent)
-      bottom left / 2px 26px no-repeat;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
 
   filter:
-    drop-shadow(0 0 4px rgba(83, 190, 255, 0.95))
-    drop-shadow(0 0 10px rgba(83, 190, 255, 0.45));
+    drop-shadow(0 0 4px rgba(70, 185, 255, 0.8))
+    drop-shadow(0 0 9px rgba(70, 185, 255, 0.32));
 
-  animation: buttonTechBorder 3.2s linear infinite;
+  animation: buttonExternalNeon 6.8s linear infinite;
 }
 
 .cta-button::after {
-  content: "";
-  position: absolute;
-
-  inset: -1px;
-  border-radius: 21px;
-
-  z-index: 0;
-  pointer-events: none;
-
-  border: 1px solid rgba(118, 202, 255, 0.28);
-
-  box-shadow:
-    0 0 8px rgba(80, 175, 255, 0.20),
-    0 0 18px rgba(80, 175, 255, 0.10),
-    inset 0 0 8px rgba(80, 175, 255, 0.06);
+  display: none;
 }
 
-@keyframes buttonTechBorder {
-  0% {
-    background-position:
-      top left,
-      top right,
-      bottom right,
-      bottom left;
+@keyframes buttonExternalNeon {
+  from {
+    transform: rotate(0deg);
   }
 
-  25% {
-    background-position:
-      top right,
-      bottom right,
-      bottom left,
-      top left;
-  }
-
-  50% {
-    background-position:
-      bottom right,
-      bottom left,
-      top left,
-      top right;
-  }
-
-  75% {
-    background-position:
-      bottom left,
-      top left,
-      top right,
-      bottom right;
-  }
-
-  100% {
-    background-position:
-      top left,
-      top right,
-      bottom right,
-      bottom left;
+  to {
+    transform: rotate(360deg);
   }
 }
 
