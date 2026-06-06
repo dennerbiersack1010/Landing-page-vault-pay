@@ -29,10 +29,6 @@
   --pix-x: 29%;
   --pix-y: 72%;
 
-  /* CARD CARTÃO */
-  --cartao-x: 12%;
-  --cartao-y: 59%;
-
   /* CARD APROVAÇÃO */
   --aprovacao-x: 53%;
   --aprovacao-y: 86%;
@@ -54,14 +50,18 @@ body {
   width: 100%;
   min-height: 100%;
   font-family: "Inter", sans-serif;
-  background: #020817;
-  color: #ffffff;
+  background: #f4f7fb;
+  color: #07111f;
   overflow-x: hidden;
 }
 
 body {
   min-height: 100dvh;
 }
+
+/* ==================================================
+   HERO
+================================================== */
 
 .hero {
   position: relative;
@@ -96,7 +96,7 @@ body {
 }
 
 /* ==================================================
-   CONTEÚDO
+   CONTEÚDO HERO
 ================================================== */
 
 .hero-content {
@@ -121,7 +121,7 @@ body {
 }
 
 /* ==================================================
-   HEADLINE
+   HEADLINE HERO
 ================================================== */
 
 h1 {
@@ -153,10 +153,10 @@ h1 span {
 }
 
 /* ==================================================
-   SUBHEADLINE
+   SUBHEADLINE HERO
 ================================================== */
 
-p {
+.hero-content p {
   position: absolute;
 
   left: var(--subheadline-x);
@@ -175,13 +175,13 @@ p {
   text-align: center;
 }
 
-p span {
+.hero-content p span {
   display: block;
   white-space: nowrap;
 }
 
 /* ==================================================
-   BOTÃO
+   BOTÃO HERO
 ================================================== */
 
 .cta-button {
@@ -308,7 +308,7 @@ p span {
 }
 
 /* ==================================================
-   CARDS FLUTUANTES
+   CARDS FLUTUANTES HERO
 ================================================== */
 
 .floating-card {
@@ -379,22 +379,11 @@ p span {
   text-shadow: 0 0 10px rgba(70, 190, 255, 0.85);
 }
 
-/* ==================================================
-   COORDENADAS DOS CARDS
-================================================== */
-
 .floating-card-pix {
   left: var(--pix-x);
   top: var(--pix-y);
   transform: translate(-50%, -50%);
   animation: floatPix 5.5s ease-in-out infinite;
-}
-
-.floating-card-card {
-  left: var(--cartao-x);
-  top: var(--cartao-y);
-  transform: translate(-50%, -50%);
-  animation: floatCard 6.2s ease-in-out infinite;
 }
 
 .floating-card-rate {
@@ -414,16 +403,6 @@ p span {
   }
 }
 
-@keyframes floatCard {
-  0%, 100% {
-    transform: translate(-50%, -50%) translateY(0);
-  }
-
-  50% {
-    transform: translate(-50%, -50%) translateY(7px);
-  }
-}
-
 @keyframes floatRate {
   0%, 100% {
     transform: translate(-50%, -50%) translateY(0);
@@ -431,5 +410,330 @@ p span {
 
   50% {
     transform: translate(-50%, -50%) translateY(-6px);
+  }
+}
+
+/* ==================================================
+   SEÇÃO 2 — BENEFÍCIOS
+================================================== */
+
+.benefits-section {
+  position: relative;
+
+  width: 100%;
+  min-height: 100dvh;
+
+  padding: 78px 22px 70px;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(0, 98, 255, 0.08),
+      transparent 34%
+    ),
+    linear-gradient(
+      180deg,
+      #f7f9fc 0%,
+      #eef3f8 100%
+    );
+
+  color: #07111f;
+  overflow: hidden;
+}
+
+.benefits-section::before {
+  content: "";
+  position: absolute;
+
+  top: -90px;
+  right: -120px;
+
+  width: 260px;
+  height: 260px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(15, 111, 255, 0.12),
+      transparent 66%
+    );
+
+  pointer-events: none;
+}
+
+.benefits-header {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto 30px;
+
+  text-align: left;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+
+  height: 28px;
+  padding: 0 12px;
+
+  border-radius: 999px;
+
+  background: rgba(7, 17, 31, 0.06);
+  border: 1px solid rgba(7, 17, 31, 0.08);
+
+  color: #0d62d9;
+
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: -0.1px;
+
+  margin-bottom: 18px;
+}
+
+.benefits-header h2 {
+  color: #07111f;
+
+  font-size: 31px;
+  line-height: 1.08;
+  font-weight: 600;
+  letter-spacing: -1.5px;
+
+  margin-bottom: 16px;
+}
+
+.benefits-header p {
+  color: #607084;
+
+  font-size: 14.2px;
+  line-height: 1.55;
+  font-weight: 400;
+  letter-spacing: -0.15px;
+}
+
+/* ==================================================
+   CARDS BENEFÍCIOS
+================================================== */
+
+.benefits-grid {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 360px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  margin: 0 auto;
+}
+
+.benefit-card {
+  position: relative;
+
+  display: flex;
+  gap: 14px;
+
+  padding: 18px 16px;
+
+  border-radius: 22px;
+
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(7, 17, 31, 0.07);
+
+  box-shadow:
+    0 14px 34px rgba(22, 34, 51, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.82);
+
+  overflow: hidden;
+
+  animation: cardEnter 0.7s ease both;
+}
+
+.benefit-card:nth-child(2) {
+  animation-delay: 0.08s;
+}
+
+.benefit-card:nth-child(3) {
+  animation-delay: 0.16s;
+}
+
+.benefit-card::before {
+  content: "";
+  position: absolute;
+
+  left: 0;
+  top: 18px;
+  bottom: 18px;
+
+  width: 3px;
+
+  border-radius: 999px;
+
+  background: linear-gradient(
+    180deg,
+    #0d62ff,
+    #17d9a3
+  );
+}
+
+.benefit-icon {
+  flex: 0 0 auto;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background: #07111f;
+
+  box-shadow:
+    0 10px 24px rgba(7, 17, 31, 0.16);
+}
+
+.benefit-icon svg {
+  width: 21px;
+  height: 21px;
+
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.pix-icon {
+  color: #18d6a3;
+  background:
+    linear-gradient(
+      135deg,
+      #061d1a,
+      #0b2d29
+    );
+}
+
+.checkout-icon {
+  color: #69b7ff;
+  background:
+    linear-gradient(
+      135deg,
+      #07111f,
+      #0c2341
+    );
+}
+
+.approval-icon {
+  color: #ffffff;
+  background:
+    linear-gradient(
+      135deg,
+      #0d62ff,
+      #073c9a
+    );
+}
+
+.benefit-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.benefit-content h3 {
+  color: #07111f;
+
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 650;
+  letter-spacing: -0.35px;
+
+  margin-bottom: 7px;
+}
+
+.benefit-content p {
+  color: #607084;
+
+  font-size: 13px;
+  line-height: 1.45;
+  font-weight: 400;
+  letter-spacing: -0.1px;
+}
+
+/* ==================================================
+   MINI STATS
+================================================== */
+
+.mini-stats {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 360px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+
+  margin: 22px auto 0;
+}
+
+.mini-stats div {
+  min-height: 72px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 18px;
+
+  background: #07111f;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 14px 30px rgba(7, 17, 31, 0.14);
+}
+
+.mini-stats strong {
+  color: #ffffff;
+
+  font-size: 17px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+
+  margin-bottom: 7px;
+}
+
+.mini-stats span {
+  color: rgba(255, 255, 255, 0.58);
+
+  font-size: 10.2px;
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: -0.1px;
+}
+
+/* ==================================================
+   ANIMAÇÕES
+================================================== */
+
+@keyframes cardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
