@@ -499,3 +499,75 @@ p span {
     height: 44px;
   }
 }
+
+/* =========================
+   AJUSTE FINAL DE POSIÇÃO
+   MOBILE HERO
+========================= */
+
+/* Move logo, headline, subheadline e botão mais para direita e mais para baixo */
+.hero-content {
+  top: 45%;
+  right: 8px;
+}
+
+/* Card Cartão: mais para baixo */
+.floating-card-card {
+  left: 5%;
+  top: 58%;
+}
+
+/* Card Pix: perto do celular/mão dela */
+.floating-card-pix {
+  left: 39%;
+  top: 57%;
+}
+
+/* Card 98%: abaixo da mão dela */
+.floating-card-rate {
+  left: 31%;
+  top: 68%;
+}
+
+/* Ajuste específico para iPhone menor */
+@media (max-width: 390px) {
+  .hero-content {
+    top: 45%;
+    right: 8px;
+  }
+
+  .floating-card-card {
+    left: 5%;
+    top: 58%;
+  }
+
+  .floating-card-pix {
+    left: 39%;
+    top: 57%;
+  }
+
+  .floating-card-rate {
+    left: 31%;
+    top: 68%;
+  }
+}
+
+/* Ajuste para Safari com barra inferior */
+@media (max-height: 760px) {
+  .hero-content {
+    top: 44.5%;
+    right: 8px;
+  }
+
+  .floating-card-card {
+    top: 58%;
+  }
+
+  .floating-card-pix {
+    top: 57%;
+  }
+
+  .floating-card-rate {
+    top: 68%;
+  }
+}
