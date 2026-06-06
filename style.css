@@ -11,7 +11,7 @@
 :root {
   /* LOGO */
   --logo-x: 69%;
-  --logo-y: 95%;
+  --logo-y: 55%;
 
   /* HEADLINE */
   --headline-x: 69%;
@@ -440,19 +440,3 @@ p span {
   }
 }
 
-/* ==================================================
-   SAFARI COM BARRA / TELA BAIXA
-================================================== */
-
-@media (max-height: 760px) {
-  :root {
-    --logo-y: 24%;
-    --headline-y: 34%;
-    --subheadline-y: 48%;
-    --button-y: 56%;
-
-    --pix-y: 62%;
-    --cartao-y: 59%;
-    --aprovacao-y: 70%;
-  }
-}
