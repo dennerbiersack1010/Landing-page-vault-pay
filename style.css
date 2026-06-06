@@ -14,6 +14,14 @@ body {
   overflow-x: hidden;
 }
 
+body {
+  min-height: 100dvh;
+}
+
+/* =========================
+   HERO MOBILE FIRST
+========================= */
+
 .hero {
   position: relative;
   width: 100%;
@@ -46,7 +54,9 @@ body {
     );
 }
 
-/* BLOCO MOBILE */
+/* =========================
+   BLOCO PRINCIPAL
+========================= */
 
 .hero-content {
   position: absolute;
@@ -56,8 +66,8 @@ body {
   right: 16px;
   transform: translateY(-50%);
 
-  width: 330px;
-  max-width: calc(100vw - 44px);
+  width: 320px;
+  max-width: calc(100vw - 40px);
 
   display: flex;
   flex-direction: column;
@@ -66,24 +76,31 @@ body {
 }
 
 .logo {
-  width: 102px;
+  width: 96px;
   height: auto;
   display: block;
-  margin-bottom: 24px;
+
+  margin-bottom: 20px;
+
   opacity: 0.96;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.08));
 }
 
-/* HEADLINE COM QUEBRA FIXA */
+/* =========================
+   HEADLINE
+========================= */
 
 h1 {
   width: 100%;
-  margin-bottom: 18px;
+
+  margin-bottom: 14px;
 
   color: #ffffff;
-  font-size: 31px;
-  line-height: 1.12;
+
+  font-size: 27px;
+  line-height: 1.10;
   font-weight: 400;
-  letter-spacing: -1.35px;
+  letter-spacing: -1.15px;
 
   text-shadow:
     0 0 16px rgba(0, 92, 255, 0.10),
@@ -95,17 +112,21 @@ h1 span {
   white-space: nowrap;
 }
 
-/* SUBHEADLINE COM QUEBRA FIXA */
+/* =========================
+   SUBHEADLINE
+========================= */
 
 p {
   width: 100%;
-  margin-bottom: 32px;
+
+  margin-bottom: 24px;
 
   color: rgba(255, 255, 255, 0.66);
-  font-size: 13px;
-  line-height: 1.45;
+
+  font-size: 11.7px;
+  line-height: 1.43;
   font-weight: 400;
-  letter-spacing: -0.1px;
+  letter-spacing: -0.08px;
 }
 
 p span {
@@ -113,29 +134,33 @@ p span {
   white-space: nowrap;
 }
 
-/* BOTÃO */
+/* =========================
+   BOTÃO GLASS
+========================= */
 
 .cta-button {
   position: relative;
   isolation: isolate;
   overflow: visible;
 
-  width: 310px;
+  width: 286px;
   max-width: 100%;
-  height: 58px;
+  height: 52px;
 
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 24px;
+  gap: 20px;
 
   text-decoration: none;
+
   border-radius: 999px;
 
-  font-size: 16.5px;
-  font-weight: 600;
-  letter-spacing: -0.25px;
   color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
 
   background:
     linear-gradient(
@@ -155,6 +180,12 @@ p span {
 
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
+
+  transition: transform 0.25s ease;
+}
+
+.cta-button:active {
+  transform: scale(0.97);
 }
 
 .cta-button span {
@@ -163,17 +194,18 @@ p span {
 }
 
 .cta-button .arrow {
-  font-size: 25px;
+  font-size: 22px;
   line-height: 1;
   font-weight: 300;
   transform: translateY(-1px);
 }
 
-/* NEON SÓ NA BORDA EXTERNA */
+/* Neon azul circulando somente na borda externa */
 
 .cta-button::before {
   content: "";
   position: absolute;
+
   inset: -2px;
   border-radius: inherit;
   padding: 2px;
@@ -214,7 +246,9 @@ p span {
   }
 }
 
-/* CARDS FLUTUANTES */
+/* =========================
+   CARDS FLUTUANTES
+========================= */
 
 .floating-card {
   position: absolute;
@@ -228,6 +262,7 @@ p span {
   gap: 6px;
 
   padding: 7px 8px;
+
   border-radius: 12px;
 
   background:
@@ -251,6 +286,7 @@ p span {
 
 .floating-card strong {
   display: block;
+
   font-size: 9px;
   line-height: 1;
   font-weight: 600;
@@ -258,10 +294,13 @@ p span {
 
 .floating-card small {
   display: block;
+
   margin-top: 3px;
+
   font-size: 7.6px;
   line-height: 1;
   font-weight: 400;
+
   color: rgba(255, 255, 255, 0.66);
 }
 
@@ -327,48 +366,88 @@ p span {
   }
 }
 
-/* iPHONE MENOR */
+/* =========================
+   iPHONE MENOR
+========================= */
 
 @media (max-width: 390px) {
   .hero-content {
     top: 43%;
     right: 14px;
 
-    width: 315px;
-    max-width: calc(100vw - 36px);
+    width: 300px;
+    max-width: calc(100vw - 32px);
   }
 
   .logo {
-    width: 92px;
-    margin-bottom: 20px;
+    width: 88px;
+    margin-bottom: 18px;
   }
 
   h1 {
-    font-size: 28.5px;
-    line-height: 1.12;
-    letter-spacing: -1.2px;
-    margin-bottom: 16px;
+    font-size: 25px;
+    line-height: 1.10;
+    letter-spacing: -1px;
+    margin-bottom: 12px;
   }
 
   p {
-    font-size: 11.8px;
-    line-height: 1.45;
-    margin-bottom: 28px;
+    font-size: 10.9px;
+    line-height: 1.42;
+    margin-bottom: 22px;
   }
 
   .cta-button {
-    width: 292px;
-    height: 54px;
-    font-size: 15.5px;
-    gap: 22px;
+    width: 270px;
+    height: 50px;
+
+    font-size: 14.2px;
+    gap: 18px;
   }
 
   .cta-button .arrow {
-    font-size: 23px;
+    font-size: 21px;
+  }
+
+  .floating-card {
+    min-width: 74px;
+    height: 38px;
+    padding: 6px 7px;
+  }
+
+  .floating-card strong {
+    font-size: 8.6px;
+  }
+
+  .floating-card small {
+    font-size: 7.2px;
+  }
+
+  .card-icon {
+    width: 13px;
+    height: 13px;
+    font-size: 8px;
+  }
+
+  .card-one {
+    left: 33%;
+    top: 44%;
+  }
+
+  .card-two {
+    left: 5%;
+    top: 53%;
+  }
+
+  .card-three {
+    left: 30%;
+    top: 64%;
   }
 }
 
-/* iPHONE BAIXO / SAFARI COM BARRA */
+/* =========================
+   iPHONE COM SAFARI / TELA BAIXA
+========================= */
 
 @media (max-height: 760px) {
   .hero-content {
@@ -380,14 +459,24 @@ p span {
   }
 
   h1 {
-    margin-bottom: 14px;
+    margin-bottom: 12px;
   }
 
   p {
-    margin-bottom: 22px;
+    margin-bottom: 20px;
   }
 
   .cta-button {
-    height: 52px;
+    height: 48px;
+  }
+}
+
+/* =========================
+   TELAS MUITO ALTAS
+========================= */
+
+@media (min-height: 820px) {
+  .hero-content {
+    top: 43%;
   }
 }
