@@ -9,31 +9,24 @@
 ================================================== */
 
 :root {
-  /* LOGO */
   --logo-x: 68%;
   --logo-y: 32%;
 
-  /* HEADLINE */
   --headline-x: 68%;
   --headline-y: 43%;
 
-  /* SUBHEADLINE */
   --subheadline-x: 68%;
   --subheadline-y: 56%;
 
-  /* BOTÃO */
   --button-x: 68%;
   --button-y: 64%;
 
-  /* CARD PIX */
   --pix-x: 29%;
   --pix-y: 72%;
 
-  /* CARD APROVAÇÃO */
   --aprovacao-x: 53%;
   --aprovacao-y: 86%;
 
-  /* TAMANHOS */
   --logo-size: 88px;
   --headline-size: 25px;
   --subheadline-size: 10.6px;
@@ -53,6 +46,7 @@ body {
   background: #f4f7fb;
   color: #07111f;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -68,7 +62,6 @@ body {
   width: 100%;
   min-height: 100dvh;
   overflow: hidden;
-
   background-image: url("assets/BG-hero.PNG");
   background-size: cover;
   background-position: center top;
@@ -80,24 +73,10 @@ body {
   inset: 0;
   z-index: 1;
   pointer-events: none;
-
   background:
-    radial-gradient(
-      circle at 64% 48%,
-      rgba(0, 98, 255, 0.08),
-      transparent 38%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(2, 8, 23, 0.02) 0%,
-      rgba(2, 8, 23, 0.04) 48%,
-      rgba(2, 8, 23, 0.34) 100%
-    );
+    radial-gradient(circle at 64% 48%, rgba(0, 98, 255, 0.08), transparent 38%),
+    linear-gradient(180deg, rgba(2, 8, 23, 0.02) 0%, rgba(2, 8, 23, 0.04) 48%, rgba(2, 8, 23, 0.34) 100%);
 }
-
-/* ==================================================
-   CONTEÚDO HERO
-================================================== */
 
 .hero-content {
   position: absolute;
@@ -116,10 +95,6 @@ body {
   opacity: 0.96;
   filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.08));
 }
-
-/* ==================================================
-   HEADLINE HERO
-================================================== */
 
 h1 {
   position: absolute;
@@ -143,10 +118,6 @@ h1 span {
   white-space: nowrap;
 }
 
-/* ==================================================
-   SUBHEADLINE HERO
-================================================== */
-
 .hero-content p {
   position: absolute;
   left: var(--subheadline-x);
@@ -165,10 +136,6 @@ h1 span {
   display: block;
   white-space: nowrap;
 }
-
-/* ==================================================
-   BOTÃO HERO
-================================================== */
 
 .cta-button {
   position: absolute;
@@ -190,13 +157,7 @@ h1 span {
   font-size: 13.8px;
   font-weight: 600;
   letter-spacing: -0.18px;
-  background:
-    linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.12) 0%,
-      rgba(255, 255, 255, 0.035) 52%,
-      rgba(0, 95, 255, 0.08) 100%
-    );
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.035) 52%, rgba(0, 95, 255, 0.08) 100%);
   border: 1px solid rgba(194, 225, 255, 0.34);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.14),
@@ -265,9 +226,7 @@ h1 span {
   }
 }
 
-/* ==================================================
-   CARDS FLUTUANTES HERO
-================================================== */
+/* FLOATING CARDS */
 
 .floating-card {
   position: absolute;
@@ -279,12 +238,7 @@ h1 span {
   gap: 7px;
   padding: 7px 9px;
   border-radius: 12px;
-  background:
-    linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.11),
-      rgba(255, 255, 255, 0.03)
-    );
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.03));
   border: 1px solid rgba(143, 205, 255, 0.34);
   box-shadow:
     inset 0 1px 1px rgba(255, 255, 255, 0.16),
@@ -356,47 +310,52 @@ h1 span {
 }
 
 /* ==================================================
-   SEÇÃO 2 — BENEFÍCIOS
+   SEÇÕES GERAIS
 ================================================== */
 
-.benefits-section {
+.section-tag,
+.dark-section-tag {
+  display: inline-flex;
+  align-items: center;
+  height: 28px;
+  padding: 0 12px;
+  border-radius: 999px;
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: -0.1px;
+  margin-bottom: 18px;
+}
+
+.section-tag {
+  background: rgba(7, 17, 31, 0.06);
+  border: 1px solid rgba(7, 17, 31, 0.08);
+  color: #0d62d9;
+}
+
+.dark-section-tag {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  color: #6fd5ff;
+}
+
+.benefits-section,
+.security-section,
+.steps-section {
   position: relative;
   width: 100%;
   min-height: 100dvh;
   padding: 78px 22px 74px;
   background:
-    radial-gradient(
-      circle at top right,
-      rgba(0, 98, 255, 0.08),
-      transparent 34%
-    ),
-    linear-gradient(
-      180deg,
-      #f8fafc 0%,
-      #eef3f8 100%
-    );
+    radial-gradient(circle at top right, rgba(0, 98, 255, 0.08), transparent 34%),
+    linear-gradient(180deg, #f8fafc 0%, #eef3f8 100%);
   color: #07111f;
   overflow: hidden;
 }
 
-.benefits-section::before {
-  content: "";
-  position: absolute;
-  top: -90px;
-  right: -120px;
-  width: 260px;
-  height: 260px;
-  border-radius: 50%;
-  background:
-    radial-gradient(
-      circle,
-      rgba(15, 111, 255, 0.10),
-      transparent 66%
-    );
-  pointer-events: none;
-}
-
-.benefits-header {
+.benefits-header,
+.security-header,
+.steps-header {
   position: relative;
   z-index: 2;
   width: 100%;
@@ -405,32 +364,20 @@ h1 span {
   text-align: left;
 }
 
-.section-tag {
-  display: inline-flex;
-  align-items: center;
-  height: 28px;
-  padding: 0 12px;
-  border-radius: 999px;
-  background: rgba(7, 17, 31, 0.06);
-  border: 1px solid rgba(7, 17, 31, 0.08);
-  color: #0d62d9;
-  font-size: 11px;
-  line-height: 1;
-  font-weight: 600;
-  letter-spacing: -0.1px;
-  margin-bottom: 18px;
-}
-
-.benefits-header h2 {
+.benefits-header h2,
+.security-header h2,
+.steps-header h2 {
   color: #07111f;
   font-size: 31px;
   line-height: 1.08;
-  font-weight: 600;
+  font-weight: 650;
   letter-spacing: -1.5px;
   margin-bottom: 16px;
 }
 
-.benefits-header p {
+.benefits-header p,
+.security-header p,
+.steps-header p {
   color: #607084;
   font-size: 14.2px;
   line-height: 1.55;
@@ -438,11 +385,11 @@ h1 span {
   letter-spacing: -0.15px;
 }
 
-/* ==================================================
-   GRID BENEFÍCIOS
-================================================== */
+/* BENEFÍCIOS */
 
-.benefits-grid {
+.benefits-grid,
+.security-list,
+.steps-list {
   position: relative;
   z-index: 2;
   width: 100%;
@@ -453,36 +400,27 @@ h1 span {
   margin: 0 auto;
 }
 
-.benefit-card {
+.benefit-card,
+.security-item,
+.step-card {
   position: relative;
   display: flex;
   gap: 14px;
   padding: 18px 16px;
   border-radius: 22px;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.94) 0%,
-      rgba(255, 255, 255, 0.88) 100%
-    );
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.88) 100%);
   border: 1px solid rgba(7, 17, 31, 0.07);
   box-shadow:
     0 14px 34px rgba(22, 34, 51, 0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.82);
   overflow: hidden;
-  animation: cardEnter 0.7s ease both;
-  transition:
-    transform 0.18s ease,
-    box-shadow 0.18s ease,
-    border-color 0.18s ease;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
 }
 
-.benefit-card:nth-child(2) {
-  animation-delay: 0.08s;
-}
-
-.benefit-card:nth-child(3) {
-  animation-delay: 0.16s;
+.benefit-card:active,
+.security-item:active,
+.step-card:active {
+  transform: scale(0.985);
 }
 
 .benefit-card::before {
@@ -496,29 +434,8 @@ h1 span {
   background: linear-gradient(180deg, #0d62ff, #17d9a3);
 }
 
-.benefit-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 22px;
-  background:
-    linear-gradient(
-      135deg,
-      rgba(13, 98, 255, 0.03),
-      rgba(23, 217, 163, 0.00)
-    );
-  pointer-events: none;
-}
-
-.benefit-card:active {
-  transform: scale(0.985);
-  box-shadow:
-    0 10px 22px rgba(22, 34, 51, 0.10),
-    inset 0 1px 0 rgba(255, 255, 255, 0.82);
-  border-color: rgba(13, 98, 255, 0.14);
-}
-
-.benefit-icon {
+.benefit-icon,
+.security-item-icon {
   position: relative;
   z-index: 1;
   flex: 0 0 auto;
@@ -528,11 +445,11 @@ h1 span {
   align-items: center;
   justify-content: center;
   border-radius: 16px;
-  box-shadow:
-    0 10px 24px rgba(7, 17, 31, 0.16);
+  box-shadow: 0 10px 24px rgba(7, 17, 31, 0.16);
 }
 
-.benefit-icon svg {
+.benefit-icon svg,
+.security-item-icon svg {
   width: 22px;
   height: 22px;
   fill: none;
@@ -544,12 +461,7 @@ h1 span {
 
 .pix-icon {
   color: #18d6a3;
-  background:
-    linear-gradient(
-      135deg,
-      #071d1a,
-      #0d312c
-    );
+  background: linear-gradient(135deg, #071d1a, #0d312c);
 }
 
 .pix-icon svg path:first-child {
@@ -559,32 +471,17 @@ h1 span {
 
 .checkout-icon {
   color: #7cc1ff;
-  background:
-    linear-gradient(
-      135deg,
-      #07111f,
-      #102844
-    );
+  background: linear-gradient(135deg, #07111f, #102844);
 }
 
 .approval-icon {
   color: #ffffff;
-  background:
-    linear-gradient(
-      135deg,
-      #0d62ff,
-      #083f9f
-    );
+  background: linear-gradient(135deg, #0d62ff, #083f9f);
 }
 
-.benefit-content {
-  position: relative;
-  z-index: 1;
-  flex: 1;
-  min-width: 0;
-}
-
-.benefit-content h3 {
+.benefit-content h3,
+.security-item h3,
+.step-content h3 {
   color: #07111f;
   font-size: 16px;
   line-height: 1.2;
@@ -593,17 +490,16 @@ h1 span {
   margin-bottom: 7px;
 }
 
-.benefit-content p {
+.benefit-content p,
+.security-item p,
+.step-content p {
   color: #607084;
   font-size: 13px;
   line-height: 1.45;
   font-weight: 400;
-  letter-spacing: -0.1px;
 }
 
-/* ==================================================
-   MINI STATS — PEQUENOS LADO A LADO
-================================================== */
+/* MINI STATS */
 
 .mini-stats {
   position: relative;
@@ -622,42 +518,9 @@ h1 span {
   padding: 12px 9px 11px;
   border-radius: 18px;
   overflow: hidden;
-  background:
-    linear-gradient(
-      180deg,
-      #0a1321 0%,
-      #09111c 100%
-    );
+  background: linear-gradient(180deg, #0a1321 0%, #09111c 100%);
   border: 1px solid rgba(120, 170, 255, 0.12);
-  box-shadow:
-    0 12px 26px rgba(7, 17, 31, 0.16),
-    inset 0 1px 0 rgba(255, 255, 255, 0.04);
-  transition:
-    transform 0.18s ease,
-    box-shadow 0.18s ease,
-    border-color 0.18s ease;
-}
-
-.mini-stat-card::before {
-  content: "";
-  position: absolute;
-  top: -42px;
-  right: -40px;
-  width: 92px;
-  height: 92px;
-  border-radius: 50%;
-  background:
-    radial-gradient(
-      circle,
-      rgba(76, 146, 255, 0.17),
-      transparent 64%
-    );
-  pointer-events: none;
-}
-
-.mini-stat-card:active {
-  transform: scale(0.96);
-  border-color: rgba(105, 183, 255, 0.24);
+  box-shadow: 0 12px 26px rgba(7, 17, 31, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 .mini-stat-icon {
@@ -668,12 +531,7 @@ h1 span {
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  background:
-    linear-gradient(
-      135deg,
-      rgba(24, 214, 163, 0.16),
-      rgba(13, 98, 255, 0.18)
-    );
+  background: linear-gradient(135deg, rgba(24, 214, 163, 0.16), rgba(13, 98, 255, 0.18));
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -703,12 +561,9 @@ h1 span {
   font-size: 9.5px;
   line-height: 1.1;
   font-weight: 500;
-  letter-spacing: -0.08px;
 }
 
-/* ==================================================
-   SEÇÃO 3 — DASHBOARD
-================================================== */
+/* DASHBOARD */
 
 .dashboard-section {
   position: relative;
@@ -717,21 +572,9 @@ h1 span {
   padding: 78px 22px 80px;
   overflow: hidden;
   background:
-    radial-gradient(
-      circle at top left,
-      rgba(23, 217, 163, 0.10),
-      transparent 34%
-    ),
-    radial-gradient(
-      circle at bottom right,
-      rgba(13, 98, 255, 0.16),
-      transparent 38%
-    ),
-    linear-gradient(
-      180deg,
-      #07111f 0%,
-      #030812 100%
-    );
+    radial-gradient(circle at top left, rgba(23, 217, 163, 0.10), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(13, 98, 255, 0.16), transparent 38%),
+    linear-gradient(180deg, #07111f 0%, #030812 100%);
   color: #ffffff;
 }
 
@@ -756,22 +599,6 @@ h1 span {
   text-align: left;
 }
 
-.dark-section-tag {
-  display: inline-flex;
-  align-items: center;
-  height: 28px;
-  padding: 0 12px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(255, 255, 255, 0.10);
-  color: #6fd5ff;
-  font-size: 11px;
-  line-height: 1;
-  font-weight: 600;
-  letter-spacing: -0.1px;
-  margin-bottom: 18px;
-}
-
 .dashboard-header h2 {
   color: #ffffff;
   font-size: 34px;
@@ -785,13 +612,7 @@ h1 span {
   color: rgba(255, 255, 255, 0.62);
   font-size: 14.2px;
   line-height: 1.55;
-  font-weight: 400;
-  letter-spacing: -0.15px;
 }
-
-/* ==================================================
-   MOCKUP DASHBOARD
-================================================== */
 
 .dashboard-mockup {
   position: relative;
@@ -801,56 +622,45 @@ h1 span {
   margin: 0 auto;
   padding: 16px;
   border-radius: 30px;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.10),
-      rgba(255, 255, 255, 0.04)
-    );
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.04));
   border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow:
-    0 24px 70px rgba(0, 0, 0, 0.34),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
 }
 
-.dashboard-mockup::before {
-  content: "";
-  position: absolute;
-  inset: 1px;
-  border-radius: 29px;
-  border: 1px solid rgba(103, 197, 255, 0.10);
-  pointer-events: none;
+.mockup-topbar,
+.panel-title-row,
+.revenue-footer,
+.payment-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .mockup-topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   margin-bottom: 14px;
 }
 
-.mockup-topbar span {
-  display: block;
+.mockup-topbar span,
+.revenue-card > span,
+.dashboard-mini-grid span,
+.panel-title-row small,
+.payment-item span {
   color: rgba(255, 255, 255, 0.52);
   font-size: 11px;
-  line-height: 1;
-  margin-bottom: 5px;
 }
 
-.mockup-topbar strong {
-  display: block;
+.mockup-topbar strong,
+.panel-title-row span {
   color: #ffffff;
   font-size: 15px;
-  line-height: 1;
   font-weight: 650;
 }
 
 .mockup-topbar button {
   height: 28px;
   padding: 0 11px;
-  border: 0;
   border-radius: 999px;
   color: #18d6a3;
   background: rgba(24, 214, 163, 0.10);
@@ -859,30 +669,21 @@ h1 span {
   font-weight: 650;
 }
 
-.revenue-card {
-  padding: 18px 16px;
-  border-radius: 24px;
-  background:
-    radial-gradient(
-      circle at top right,
-      rgba(24, 214, 163, 0.16),
-      transparent 46%
-    ),
-    linear-gradient(
-      135deg,
-      rgba(13, 98, 255, 0.22),
-      rgba(255, 255, 255, 0.06)
-    );
-  border: 1px solid rgba(255, 255, 255, 0.10);
-  margin-bottom: 12px;
+.revenue-card,
+.payment-methods-card,
+.last-payments-card,
+.dashboard-mini-grid article {
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.revenue-card > span {
-  display: block;
-  color: rgba(255, 255, 255, 0.58);
-  font-size: 11px;
-  line-height: 1;
-  margin-bottom: 10px;
+.revenue-card {
+  padding: 18px 16px;
+  margin-bottom: 12px;
+  background:
+    radial-gradient(circle at top right, rgba(24, 214, 163, 0.16), transparent 46%),
+    linear-gradient(135deg, rgba(13, 98, 255, 0.22), rgba(255, 255, 255, 0.06));
 }
 
 .revenue-card strong {
@@ -892,22 +693,11 @@ h1 span {
   line-height: 1;
   font-weight: 720;
   letter-spacing: -1.3px;
-  margin-bottom: 14px;
+  margin: 10px 0 14px;
 }
 
-.revenue-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.revenue-footer small {
-  color: rgba(255, 255, 255, 0.64);
-  font-size: 10.5px;
-  font-weight: 550;
-}
-
-.revenue-footer small:first-child {
+.revenue-footer small:first-child,
+.payment-item small {
   color: #18d6a3;
 }
 
@@ -920,57 +710,21 @@ h1 span {
 
 .dashboard-mini-grid article {
   padding: 14px 13px;
-  border-radius: 19px;
-  background: rgba(255, 255, 255, 0.055);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.dashboard-mini-grid span {
-  display: block;
-  color: rgba(255, 255, 255, 0.48);
-  font-size: 10.5px;
-  margin-bottom: 8px;
 }
 
 .dashboard-mini-grid strong {
-  display: block;
   color: #ffffff;
   font-size: 22px;
-  line-height: 1;
-  font-weight: 700;
-  letter-spacing: -0.7px;
 }
 
 .payment-methods-card,
 .last-payments-card {
   padding: 15px 14px;
-  border-radius: 22px;
-  background: rgba(255, 255, 255, 0.055);
-  border: 1px solid rgba(255, 255, 255, 0.08);
   margin-bottom: 12px;
 }
 
 .last-payments-card {
   margin-bottom: 0;
-}
-
-.panel-title-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 14px;
-}
-
-.panel-title-row span {
-  color: #ffffff;
-  font-size: 13px;
-  font-weight: 650;
-  letter-spacing: -0.2px;
-}
-
-.panel-title-row small {
-  color: rgba(255, 255, 255, 0.42);
-  font-size: 10px;
 }
 
 .method-row {
@@ -979,10 +733,6 @@ h1 span {
   gap: 9px;
   align-items: center;
   margin-bottom: 11px;
-}
-
-.method-row:last-child {
-  margin-bottom: 0;
 }
 
 .method-info {
@@ -1026,15 +776,11 @@ h1 span {
   display: block;
   height: 100%;
   border-radius: inherit;
-  background:
-    linear-gradient(
-      90deg,
-      #0d62ff,
-      #18d6a3
-    );
+  background: linear-gradient(90deg, #0d62ff, #18d6a3);
 }
 
-.method-row strong {
+.method-row strong,
+.payment-item small {
   color: rgba(255, 255, 255, 0.74);
   font-size: 11px;
   font-weight: 650;
@@ -1042,97 +788,22 @@ h1 span {
 }
 
 .payment-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: 11px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 .payment-item:last-child {
   border-bottom: 0;
-  padding-bottom: 0;
-}
-
-.payment-item:first-of-type {
-  padding-top: 0;
 }
 
 .payment-item strong {
   display: block;
   color: #ffffff;
   font-size: 12px;
-  line-height: 1;
-  font-weight: 650;
   margin-bottom: 6px;
 }
 
-.payment-item span {
-  display: block;
-  color: rgba(255, 255, 255, 0.46);
-  font-size: 10.5px;
-  line-height: 1;
-}
-
-.payment-item small {
-  color: #18d6a3;
-  font-size: 12px;
-  font-weight: 650;
-}
-
-/* ==================================================
-   SEÇÃO 4 — SEGURANÇA
-================================================== */
-
-.security-section {
-  position: relative;
-  width: 100%;
-  min-height: 100dvh;
-  padding: 78px 22px 82px;
-  overflow: hidden;
-  background:
-    radial-gradient(
-      circle at top right,
-      rgba(13, 98, 255, 0.08),
-      transparent 36%
-    ),
-    linear-gradient(
-      180deg,
-      #f8fafc 0%,
-      #eef3f8 100%
-    );
-  color: #07111f;
-}
-
-.security-header {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 360px;
-  margin: 0 auto 28px;
-  text-align: left;
-}
-
-.security-tag {
-  color: #0d62ff;
-}
-
-.security-header h2 {
-  color: #07111f;
-  font-size: 32px;
-  line-height: 1.08;
-  font-weight: 650;
-  letter-spacing: -1.5px;
-  margin-bottom: 16px;
-}
-
-.security-header p {
-  color: #607084;
-  font-size: 14.2px;
-  line-height: 1.55;
-  font-weight: 400;
-  letter-spacing: -0.15px;
-}
+/* SEGURANÇA */
 
 .security-visual-card {
   position: relative;
@@ -1143,21 +814,9 @@ h1 span {
   padding: 22px 18px 18px;
   border-radius: 28px;
   overflow: hidden;
-  background:
-    radial-gradient(
-      circle at top right,
-      rgba(13, 98, 255, 0.14),
-      transparent 48%
-    ),
-    linear-gradient(
-      180deg,
-      #ffffff 0%,
-      #f5f8fc 100%
-    );
+  background: linear-gradient(180deg, #ffffff 0%, #f5f8fc 100%);
   border: 1px solid rgba(7, 17, 31, 0.07);
-  box-shadow:
-    0 18px 42px rgba(22, 34, 51, 0.10),
-    inset 0 1px 0 rgba(255, 255, 255, 0.86);
+  box-shadow: 0 18px 42px rgba(22, 34, 51, 0.10);
 }
 
 .security-orb {
@@ -1169,14 +828,8 @@ h1 span {
   justify-content: center;
   border-radius: 24px;
   color: #ffffff;
-  background:
-    linear-gradient(
-      135deg,
-      #07111f,
-      #0d62ff
-    );
-  box-shadow:
-    0 16px 34px rgba(13, 98, 255, 0.24);
+  background: linear-gradient(135deg, #07111f, #0d62ff);
+  box-shadow: 0 16px 34px rgba(13, 98, 255, 0.24);
 }
 
 .security-orb svg {
@@ -1195,14 +848,7 @@ h1 span {
   right: 18px;
   top: 112px;
   height: 1px;
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      rgba(13, 98, 255, 0.5),
-      rgba(23, 217, 163, 0.5),
-      transparent
-    );
+  background: linear-gradient(90deg, transparent, rgba(13, 98, 255, 0.5), rgba(23, 217, 163, 0.5), transparent);
   animation: securityScan 2.8s ease-in-out infinite;
 }
 
@@ -1210,21 +856,19 @@ h1 span {
   margin-bottom: 18px;
 }
 
-.security-status-row span {
+.security-status-row span,
+.risk-meter-top span {
   display: block;
   color: #607084;
   font-size: 11px;
-  line-height: 1;
-  margin-bottom: 8px;
 }
 
 .security-status-row strong {
   display: block;
   color: #07111f;
   font-size: 19px;
-  line-height: 1.1;
   font-weight: 700;
-  letter-spacing: -0.5px;
+  margin-top: 8px;
 }
 
 .risk-meter {
@@ -1237,19 +881,12 @@ h1 span {
 .risk-meter-top {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   margin-bottom: 10px;
-}
-
-.risk-meter-top span {
-  color: #607084;
-  font-size: 11px;
 }
 
 .risk-meter-top strong {
   color: #18a67f;
   font-size: 11px;
-  font-weight: 700;
 }
 
 .risk-track {
@@ -1264,88 +901,291 @@ h1 span {
   display: block;
   width: 28%;
   height: 100%;
-  border-radius: inherit;
+  background: linear-gradient(90deg, #18d6a3, #0d62ff);
+}
+
+/* COMO FUNCIONA */
+
+.step-card {
+  align-items: flex-start;
+}
+
+.step-number {
+  flex: 0 0 auto;
+  width: 46px;
+  height: 46px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #07111f;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 10px 24px rgba(7, 17, 31, 0.16);
+}
+
+/* ==================================================
+   FORMULÁRIO — AZUL ESCURO
+================================================== */
+
+.form-section {
+  position: relative;
+  width: 100%;
+  min-height: 100dvh;
+  padding: 78px 22px 82px;
+  overflow: hidden;
+
+  background:
+    radial-gradient(circle at 20% 0%, rgba(42, 135, 255, 0.28), transparent 34%),
+    radial-gradient(circle at 100% 70%, rgba(23, 217, 163, 0.10), transparent 32%),
+    linear-gradient(180deg, #061a3a 0%, #041126 48%, #020817 100%);
+
+  color: #ffffff;
+}
+
+.form-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+
+  background-size: 42px 42px;
+  opacity: 0.16;
+  pointer-events: none;
+}
+
+.form-section::after {
+  content: "";
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  top: 34px;
+  height: 1px;
+
   background:
     linear-gradient(
       90deg,
-      #18d6a3,
-      #0d62ff
+      transparent,
+      rgba(111, 213, 255, 0.42),
+      transparent
     );
+
+  pointer-events: none;
 }
 
-.security-list {
+.form-header {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto 30px;
+  text-align: left;
+}
+
+.form-header h2 {
+  color: #ffffff;
+  font-size: 34px;
+  line-height: 1.06;
+  font-weight: 650;
+  letter-spacing: -1.7px;
+  margin-bottom: 16px;
+}
+
+.form-header p {
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 14.2px;
+  line-height: 1.55;
+}
+
+/* FORM */
+
+.lead-form {
   position: relative;
   z-index: 2;
   width: 100%;
   max-width: 360px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  padding: 18px;
+  border-radius: 28px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.10),
+      rgba(255, 255, 255, 0.045)
+    );
+
+  border: 1px solid rgba(155, 215, 255, 0.18);
+
+  box-shadow:
+    0 24px 70px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 }
 
-.security-item {
-  display: flex;
-  gap: 13px;
-  padding: 15px;
-  border-radius: 22px;
-  background: rgba(255, 255, 255, 0.74);
-  border: 1px solid rgba(7, 17, 31, 0.07);
+.lead-form::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: 27px;
+
+  border: 1px solid rgba(111, 213, 255, 0.08);
+  pointer-events: none;
+}
+
+.lead-form label {
+  display: block;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 11px;
+  font-weight: 600;
+  margin-bottom: 13px;
+}
+
+.lead-form input,
+.lead-form select,
+.lead-form textarea {
+  width: 100%;
+  margin-top: 8px;
+  padding: 0 14px;
+  height: 46px;
+
+  border-radius: 15px;
+  outline: none;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.085),
+      rgba(255, 255, 255, 0.045)
+    );
+
+  border: 1px solid rgba(170, 220, 255, 0.16);
+
+  font-family: inherit;
+  font-size: 13px;
+
   box-shadow:
-    0 12px 28px rgba(22, 34, 51, 0.07);
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.lead-form input:focus,
+.lead-form select:focus,
+.lead-form textarea:focus {
+  border-color: rgba(111, 213, 255, 0.48);
+  box-shadow:
+    0 0 0 3px rgba(111, 213, 255, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.lead-form textarea {
+  height: 92px;
+  padding-top: 13px;
+  resize: none;
+}
+
+.lead-form input::placeholder,
+.lead-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.36);
+}
+
+.lead-form select {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.lead-form button {
+  width: 100%;
+  height: 50px;
+  margin-top: 4px;
+
+  border: 0;
+  border-radius: 17px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0d62ff 0%,
+      #1387ff 48%,
+      #18d6a3 100%
+    );
+
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+  font-family: inherit;
+
+  box-shadow:
+    0 14px 34px rgba(13, 98, 255, 0.28),
+    0 0 26px rgba(24, 214, 163, 0.10);
+
   transition:
     transform 0.18s ease,
     box-shadow 0.18s ease;
 }
 
-.security-item:active {
-  transform: scale(0.985);
+.lead-form button:active {
+  transform: scale(0.98);
   box-shadow:
-    0 8px 20px rgba(22, 34, 51, 0.08);
+    0 9px 22px rgba(13, 98, 255, 0.24),
+    0 0 20px rgba(24, 214, 163, 0.08);
 }
 
-.security-item-icon {
-  flex: 0 0 auto;
-  width: 38px;
-  height: 38px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 14px;
-  color: #0d62ff;
-  background: rgba(13, 98, 255, 0.08);
+.lead-form button span {
+  margin-left: 10px;
 }
 
-.security-item-icon svg {
-  width: 20px;
-  height: 20px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.7;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+/* FOOTER */
+
+.footer {
+  padding: 42px 22px 36px;
+  background: #020817;
+  color: #ffffff;
+  text-align: center;
 }
 
-.security-item h3 {
-  color: #07111f;
-  font-size: 15px;
-  line-height: 1.2;
-  font-weight: 650;
-  letter-spacing: -0.25px;
-  margin-bottom: 6px;
+.footer img {
+  width: 92px;
+  height: auto;
+  margin-bottom: 18px;
+  opacity: 0.92;
 }
 
-.security-item p {
-  color: #607084;
-  font-size: 12.6px;
+.footer p {
+  max-width: 280px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.54);
+  font-size: 12px;
   line-height: 1.45;
-  font-weight: 400;
-  letter-spacing: -0.08px;
 }
 
-/* ==================================================
-   ANIMAÇÕES
-================================================== */
+.footer-line {
+  width: 100%;
+  max-width: 320px;
+  height: 1px;
+  margin: 24px auto 18px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.14), transparent);
+}
+
+.footer small {
+  color: rgba(255, 255, 255, 0.44);
+  font-size: 11px;
+}
+
+.footer strong {
+  color: rgba(255, 255, 255, 0.78);
+  font-weight: 600;
+}
+
+/* ANIMAÇÕES */
 
 @keyframes cardEnter {
   from {
