@@ -1,21 +1,28 @@
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("Vault Pay carregado.");
+  console.log("Vault Pay carregado sem PWA.");
 
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker
-      .register("/service-worker.js")
-      .then((registration) => {
-        console.log("Service Worker registrado.");
+      .getRegistrations()
+      .then((registrations) => {
+        registrations.forEach((registration) => {
+          registration.unregister();
+        });
 
-        registration.update();
-
-        if (registration.waiting) {
-          registration.waiting.postMessage({ type: "SKIP_WAITING" });
-        }
+        console.log("PWA removido. Service Workers antigos desativados.");
       })
       .catch((error) => {
-        console.log("Erro ao registrar Service Worker:", error);
+        console.log("Erro ao remover Service Worker:", error);
       });
   }
+
+  if ("caches" in window) {
+    caches.keys().then((cacheNames) => {
+      cacheNames.forEach((cacheName) => {
+        caches.delete(cacheName);
+      });
+
+      console.log("Caches antigos apagados.");
+    });
+  }
 });
-  
