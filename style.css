@@ -335,8 +335,6 @@ body {
   letter-spacing: -0.15px;
 }
 
-/* BENEFÍCIOS */
-
 .benefits-grid,
 .security-list {
   position: relative;
@@ -524,7 +522,8 @@ body {
   color: #ffffff;
 }
 
-.dashboard-section::before {
+.dashboard-section::before,
+.form-section::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -536,7 +535,8 @@ body {
   pointer-events: none;
 }
 
-.dashboard-header {
+.dashboard-header,
+.form-header {
   position: relative;
   z-index: 2;
   width: 100%;
@@ -545,7 +545,8 @@ body {
   text-align: left;
 }
 
-.dashboard-header h2 {
+.dashboard-header h2,
+.form-header h2 {
   color: #ffffff;
   font-size: 34px;
   line-height: 1.06;
@@ -554,7 +555,8 @@ body {
   margin-bottom: 16px;
 }
 
-.dashboard-header p {
+.dashboard-header p,
+.form-header p {
   color: rgba(255, 255, 255, 0.66);
   font-size: 14.2px;
   line-height: 1.55;
@@ -856,8 +858,8 @@ body {
 .steps-section {
   position: relative;
   width: 100%;
-  min-height: auto !important;
-  padding: 64px 22px 64px !important;
+  min-height: auto;
+  padding: 64px 22px 64px;
   background:
     radial-gradient(circle at top right, rgba(0, 98, 255, 0.08), transparent 34%),
     linear-gradient(180deg, #f8fafc 0%, #eef3f8 100%);
@@ -927,10 +929,6 @@ body {
     0 14px 34px rgba(22, 34, 51, 0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.82);
   overflow: hidden;
-}
-
-.step-card::before {
-  display: none;
 }
 
 .step-number {
@@ -1064,50 +1062,6 @@ body {
   transform: scale(0.98);
 }
 
-/* ANIMAÇÕES */
-
-@keyframes buttonGlowPulse {
-  0%, 100% {
-    opacity: 0.45;
-  }
-
-  50% {
-    opacity: 1;
-  }
-}
-
-@keyframes floatPix {
-  0%, 100% {
-    transform: translate(-50%, -50%) translateY(0);
-  }
-
-  50% {
-    transform: translate(-50%, -50%) translateY(-8px);
-  }
-}
-
-@keyframes floatRate {
-  0%, 100% {
-    transform: translate(-50%, -50%) translateY(0);
-  }
-
-  50% {
-    transform: translate(-50%, -50%) translateY(-6px);
-  }
-}
-
-@keyframes securityScan {
-  0%, 100% {
-    opacity: 0.18;
-    transform: translateY(0);
-  }
-
-  50% {
-    opacity: 0.9;
-    transform: translateY(34px);
-  }
-}
-
 /* FORMULÁRIO PREMIUM */
 
 .form-section {
@@ -1122,18 +1076,6 @@ body {
   color: #ffffff;
 }
 
-.form-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  opacity: 0.12;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-  background-size: 42px 42px;
-  pointer-events: none;
-}
-
 .form-section::after {
   content: "";
   position: absolute;
@@ -1143,30 +1085,6 @@ body {
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(111, 213, 255, 0.42), transparent);
   pointer-events: none;
-}
-
-.form-header {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 360px;
-  margin: 0 auto 28px;
-  text-align: left;
-}
-
-.form-header h2 {
-  color: #ffffff;
-  font-size: 34px;
-  line-height: 1.06;
-  font-weight: 650;
-  letter-spacing: -1.7px;
-  margin-bottom: 16px;
-}
-
-.form-header p {
-  color: rgba(255, 255, 255, 0.66);
-  font-size: 14.2px;
-  line-height: 1.55;
 }
 
 .lead-form {
@@ -1275,4 +1193,48 @@ body {
 
 .lead-form button:active {
   transform: scale(0.98);
+}
+
+/* ANIMAÇÕES */
+
+@keyframes buttonGlowPulse {
+  0%, 100% {
+    opacity: 0.45;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes floatPix {
+  0%, 100% {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) translateY(-8px);
+  }
+}
+
+@keyframes floatRate {
+  0%, 100% {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) translateY(-6px);
+  }
+}
+
+@keyframes securityScan {
+  0%, 100% {
+    opacity: 0.18;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 0.9;
+    transform: translateY(34px);
+  }
 }
