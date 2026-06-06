@@ -47,27 +47,6 @@ body {
   min-height: 100dvh;
 }
 
-/* ==================================================
-   TRAVA CONTRA DUPLICAÇÃO DA SEÇÃO FINAL
-   Remove qualquer bloco de teste antigo e qualquer
-   segunda seção "Como funciona" duplicada.
-================================================== */
-
-#secao-final-teste,
-section[id="secao-final-teste"],
-body > section.steps-section ~ section.steps-section {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  height: 0 !important;
-  min-height: 0 !important;
-  max-height: 0 !important;
-  overflow: hidden !important;
-  pointer-events: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
 /* HERO */
 
 .hero {
@@ -315,8 +294,7 @@ body > section.steps-section ~ section.steps-section {
 /* SEÇÕES CLARAS */
 
 .benefits-section,
-.security-section,
-.steps-section {
+.security-section {
   position: relative;
   width: 100%;
   min-height: 100dvh;
@@ -329,8 +307,7 @@ body > section.steps-section ~ section.steps-section {
 }
 
 .benefits-header,
-.security-header,
-.steps-header {
+.security-header {
   position: relative;
   z-index: 2;
   width: 100%;
@@ -340,8 +317,7 @@ body > section.steps-section ~ section.steps-section {
 }
 
 .benefits-header h2,
-.security-header h2,
-.steps-header h2 {
+.security-header h2 {
   color: #07111f;
   font-size: 31px;
   line-height: 1.08;
@@ -351,8 +327,7 @@ body > section.steps-section ~ section.steps-section {
 }
 
 .benefits-header p,
-.security-header p,
-.steps-header p {
+.security-header p {
   color: #607084;
   font-size: 14.2px;
   line-height: 1.55;
@@ -363,8 +338,7 @@ body > section.steps-section ~ section.steps-section {
 /* BENEFÍCIOS */
 
 .benefits-grid,
-.security-list,
-.steps-list {
+.security-list {
   position: relative;
   z-index: 2;
   width: 100%;
@@ -376,8 +350,7 @@ body > section.steps-section ~ section.steps-section {
 }
 
 .benefit-card,
-.security-item,
-.step-card {
+.security-item {
   position: relative;
   display: flex;
   gap: 14px;
@@ -403,8 +376,7 @@ body > section.steps-section ~ section.steps-section {
 }
 
 .benefit-card:active,
-.security-item:active,
-.step-card:active {
+.security-item:active {
   transform: scale(0.985);
 }
 
@@ -454,8 +426,7 @@ body > section.steps-section ~ section.steps-section {
 }
 
 .benefit-content h3,
-.security-item h3,
-.step-content h3 {
+.security-item h3 {
   color: #07111f;
   font-size: 16px;
   line-height: 1.2;
@@ -465,8 +436,7 @@ body > section.steps-section ~ section.steps-section {
 }
 
 .benefit-content p,
-.security-item p,
-.step-content p {
+.security-item p {
   color: #607084;
   font-size: 13px;
   line-height: 1.45;
@@ -884,14 +854,21 @@ body > section.steps-section ~ section.steps-section {
 /* SEÇÃO FINAL - COMO FUNCIONA */
 
 .steps-section {
-  min-height: auto;
-  padding-bottom: 86px;
+  position: relative;
+  width: 100%;
+  min-height: auto !important;
+  padding: 64px 22px 64px !important;
+  background:
+    radial-gradient(circle at top right, rgba(0, 98, 255, 0.08), transparent 34%),
+    linear-gradient(180deg, #f8fafc 0%, #eef3f8 100%);
+  color: #07111f;
+  overflow: hidden;
 }
 
 .steps-section::before {
   content: "";
   position: absolute;
-  top: 90px;
+  top: 70px;
   right: -90px;
   width: 210px;
   height: 210px;
@@ -900,21 +877,59 @@ body > section.steps-section ~ section.steps-section {
   pointer-events: none;
 }
 
+.steps-header {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto 28px;
+  text-align: left;
+}
+
+.steps-header h2 {
+  color: #07111f;
+  font-size: 31px;
+  line-height: 1.08;
+  font-weight: 650;
+  letter-spacing: -1.5px;
+  margin-bottom: 16px;
+}
+
+.steps-header p {
+  color: #607084;
+  font-size: 14.2px;
+  line-height: 1.55;
+  font-weight: 400;
+  letter-spacing: -0.15px;
+}
+
+.steps-list {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 0 auto;
+}
+
 .step-card {
+  position: relative;
+  display: flex;
   align-items: flex-start;
+  gap: 14px;
+  padding: 18px 16px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.88));
+  border: 1px solid rgba(7, 17, 31, 0.07);
+  box-shadow:
+    0 14px 34px rgba(22, 34, 51, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.82);
+  overflow: hidden;
 }
 
 .step-card::before {
-  content: "";
-  position: absolute;
-  left: 39px;
-  top: 64px;
-  bottom: -16px;
-  width: 1px;
-  background: linear-gradient(180deg, rgba(13, 98, 255, 0.22), transparent);
-}
-
-.step-card:last-child::before {
   display: none;
 }
 
@@ -931,12 +946,7 @@ body > section.steps-section ~ section.steps-section {
   color: #ffffff;
   font-size: 13px;
   font-weight: 700;
-  background:
-    linear-gradient(
-      135deg,
-      #07111f 0%,
-      #0d62ff 100%
-    );
+  background: linear-gradient(135deg, #07111f 0%, #0d62ff 100%);
   box-shadow:
     0 10px 24px rgba(7, 17, 31, 0.16),
     0 0 18px rgba(13, 98, 255, 0.16);
@@ -945,6 +955,22 @@ body > section.steps-section ~ section.steps-section {
 .step-content {
   flex: 1;
   min-width: 0;
+}
+
+.step-content h3 {
+  color: #07111f;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 650;
+  letter-spacing: -0.35px;
+  margin-bottom: 7px;
+}
+
+.step-content p {
+  color: #607084;
+  font-size: 13px;
+  line-height: 1.45;
+  font-weight: 400;
 }
 
 .final-cta-card {
@@ -1028,13 +1054,7 @@ body > section.steps-section ~ section.steps-section {
   color: #ffffff;
   font-size: 14px;
   font-weight: 700;
-  background:
-    linear-gradient(
-      135deg,
-      #0d62ff 0%,
-      #1387ff 54%,
-      #18d6a3 100%
-    );
+  background: linear-gradient(135deg, #0d62ff 0%, #1387ff 54%, #18d6a3 100%);
   box-shadow:
     0 14px 34px rgba(13, 98, 255, 0.24),
     0 0 26px rgba(24, 214, 163, 0.10);
