@@ -11,15 +11,8 @@ body {
   font-family: "Inter", sans-serif;
   background: #020817;
   color: #ffffff;
-}
-
-body {
   overflow-x: hidden;
 }
-
-/* =========================
-   HERO MOBILE FIRST
-========================= */
 
 .hero {
   position: relative;
@@ -36,7 +29,7 @@ body {
   align-items: center;
   justify-content: flex-end;
 
-  padding: 0 24px;
+  padding: 0 20px;
 }
 
 .hero-overlay {
@@ -47,7 +40,7 @@ body {
 
   background:
     radial-gradient(
-      circle at 64% 50%,
+      circle at 62% 50%,
       rgba(0, 98, 255, 0.08),
       transparent 38%
     ),
@@ -55,20 +48,18 @@ body {
       180deg,
       rgba(2, 8, 23, 0.02) 0%,
       rgba(2, 8, 23, 0.04) 48%,
-      rgba(2, 8, 23, 0.32) 100%
+      rgba(2, 8, 23, 0.34) 100%
     );
 }
 
-/* =========================
-   BLOCO DE CONTEÚDO
-========================= */
+/* BLOCO INTEIRO MAIS CONTROLADO */
 
 .hero-content {
   position: relative;
   z-index: 3;
 
-  width: 100%;
-  max-width: 350px;
+  width: 56%;
+  max-width: 270px;
 
   display: flex;
   flex-direction: column;
@@ -77,59 +68,54 @@ body {
 
   margin-left: auto;
 
-  transform: translateY(40px);
+  transform: translateY(32px);
 }
 
 .logo {
-  width: 116px;
+  width: 92px;
   height: auto;
   display: block;
 
-  margin-bottom: 26px;
+  margin-bottom: 18px;
 
   opacity: 0.96;
-  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.08));
 }
 
-/* =========================
-   TEXTOS
-========================= */
+/* HEADLINE REALMENTE MENOR */
 
 h1 {
   width: 100%;
-  max-width: 350px;
+  max-width: 270px;
 
-  font-size: 31px;
-  line-height: 1.13;
+  font-size: 25px;
+  line-height: 1.12;
   font-weight: 400;
-  letter-spacing: -1.45px;
+  letter-spacing: -1px;
 
   color: #ffffff;
 
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 
   text-shadow:
-    0 0 18px rgba(0, 92, 255, 0.12),
-    0 0 34px rgba(0, 92, 255, 0.08);
+    0 0 16px rgba(0, 92, 255, 0.10),
+    0 0 28px rgba(0, 92, 255, 0.08);
 }
 
 p {
   width: 100%;
-  max-width: 320px;
+  max-width: 250px;
 
-  font-size: 13.8px;
-  line-height: 1.45;
+  font-size: 11.5px;
+  line-height: 1.42;
   font-weight: 400;
-  letter-spacing: -0.18px;
+  letter-spacing: -0.08px;
 
-  color: rgba(255, 255, 255, 0.68);
+  color: rgba(255, 255, 255, 0.66);
 
-  margin-bottom: 34px;
+  margin-bottom: 26px;
 }
 
-/* =========================
-   BOTÃO GLASS
-========================= */
+/* BOTÃO MENOR E PROPORCIONAL */
 
 .cta-button {
   position: relative;
@@ -137,39 +123,39 @@ p {
   overflow: visible;
 
   width: 100%;
-  max-width: 335px;
-  height: 62px;
+  max-width: 250px;
+  height: 52px;
 
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 28px;
+  gap: 20px;
 
   text-decoration: none;
 
   border-radius: 999px;
 
-  font-size: 17px;
+  font-size: 14.8px;
   font-weight: 600;
-  letter-spacing: -0.3px;
+  letter-spacing: -0.2px;
 
   color: #ffffff;
 
   background:
     linear-gradient(
       135deg,
-      rgba(255, 255, 255, 0.12) 0%,
+      rgba(255, 255, 255, 0.11) 0%,
       rgba(255, 255, 255, 0.035) 48%,
       rgba(0, 95, 255, 0.06) 100%
     );
 
-  border: 1px solid rgba(194, 225, 255, 0.50);
+  border: 1px solid rgba(194, 225, 255, 0.48);
 
   box-shadow:
-    inset 0 1px 1px rgba(255, 255, 255, 0.18),
-    inset 0 -1px 1px rgba(0, 110, 255, 0.14),
-    0 0 16px rgba(41, 137, 255, 0.18),
-    0 10px 28px rgba(0, 0, 0, 0.22);
+    inset 0 1px 1px rgba(255, 255, 255, 0.16),
+    inset 0 -1px 1px rgba(0, 110, 255, 0.12),
+    0 0 14px rgba(41, 137, 255, 0.16),
+    0 10px 24px rgba(0, 0, 0, 0.20);
 
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -187,13 +173,14 @@ p {
 }
 
 .cta-button .arrow {
-  font-size: 27px;
+  font-size: 23px;
   line-height: 1;
   font-weight: 300;
   transform: translateY(-1px);
 }
 
-/* neon circulando SOMENTE FORA da borda */
+/* NEON SOMENTE NA BORDA EXTERNA */
+
 .cta-button::before {
   content: "";
   position: absolute;
@@ -238,37 +225,35 @@ p {
   }
 }
 
-/* =========================
-   CARDS FLUTUANTES
-========================= */
+/* CARDS PEQUENOS */
 
 .floating-card {
   position: absolute;
   z-index: 2;
 
-  min-width: 90px;
-  height: 46px;
+  min-width: 78px;
+  height: 40px;
 
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 
-  padding: 8px 9px;
+  padding: 7px 8px;
 
-  border-radius: 13px;
+  border-radius: 12px;
 
   background:
     linear-gradient(
       135deg,
-      rgba(255, 255, 255, 0.12),
-      rgba(255, 255, 255, 0.035)
+      rgba(255, 255, 255, 0.11),
+      rgba(255, 255, 255, 0.03)
     );
 
-  border: 1px solid rgba(143, 205, 255, 0.36);
+  border: 1px solid rgba(143, 205, 255, 0.34);
 
   box-shadow:
-    inset 0 1px 1px rgba(255, 255, 255, 0.18),
-    0 0 15px rgba(0, 116, 255, 0.18);
+    inset 0 1px 1px rgba(255, 255, 255, 0.16),
+    0 0 13px rgba(0, 116, 255, 0.15);
 
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
@@ -278,22 +263,17 @@ p {
 
 .floating-card strong {
   display: block;
-
-  font-size: 10.5px;
+  font-size: 9px;
   line-height: 1;
   font-weight: 600;
-  letter-spacing: -0.1px;
 }
 
 .floating-card small {
   display: block;
-
-  margin-top: 4px;
-
-  font-size: 8.8px;
+  margin-top: 3px;
+  font-size: 7.6px;
   line-height: 1;
   font-weight: 400;
-
   color: rgba(255, 255, 255, 0.66);
 }
 
@@ -302,29 +282,29 @@ p {
   align-items: center;
   justify-content: center;
 
-  width: 17px;
-  height: 17px;
+  width: 14px;
+  height: 14px;
 
-  font-size: 10px;
+  font-size: 9px;
   color: #6bd8ff;
 
   text-shadow: 0 0 10px rgba(70, 190, 255, 0.85);
 }
 
 .card-one {
-  left: 34%;
+  left: 33%;
   top: 44%;
   animation: floatOne 5.5s ease-in-out infinite;
 }
 
 .card-two {
-  left: 6%;
+  left: 5%;
   top: 53%;
   animation: floatTwo 6.2s ease-in-out infinite;
 }
 
 .card-three {
-  left: 31%;
+  left: 30%;
   top: 64%;
   animation: floatThree 5.8s ease-in-out infinite;
 }
@@ -335,7 +315,7 @@ p {
   }
 
   50% {
-    transform: translateY(-9px);
+    transform: translateY(-8px);
   }
 }
 
@@ -345,7 +325,7 @@ p {
   }
 
   50% {
-    transform: translateY(8px);
+    transform: translateY(7px);
   }
 }
 
@@ -355,13 +335,11 @@ p {
   }
 
   50% {
-    transform: translateY(-7px);
+    transform: translateY(-6px);
   }
 }
 
-/* =========================
-   AJUSTE iPHONE 390px
-========================= */
+/* IPHONE 390px */
 
 @media (max-width: 390px) {
   .hero {
@@ -369,116 +347,91 @@ p {
   }
 
   .hero-content {
-    max-width: 330px;
-    transform: translateY(36px);
+    width: 56%;
+    max-width: 250px;
+    transform: translateY(30px);
   }
 
   .logo {
-    width: 106px;
-    margin-bottom: 22px;
-  }
-
-  h1 {
-    max-width: 330px;
-
-    font-size: 28.5px;
-    line-height: 1.13;
-    font-weight: 400;
-    letter-spacing: -1.25px;
-
-    margin-bottom: 18px;
-  }
-
-  p {
-    max-width: 295px;
-
-    font-size: 12.8px;
-    line-height: 1.43;
-    letter-spacing: -0.12px;
-
-    margin-bottom: 30px;
-  }
-
-  .cta-button {
-    max-width: 305px;
-    height: 58px;
-
-    font-size: 16px;
-    gap: 22px;
-  }
-
-  .cta-button .arrow {
-    font-size: 25px;
-  }
-
-  .floating-card {
-    min-width: 84px;
-    height: 43px;
-    padding: 7px 8px;
-  }
-
-  .floating-card strong {
-    font-size: 9.8px;
-  }
-
-  .floating-card small {
-    font-size: 8.2px;
-  }
-
-  .card-icon {
-    width: 15px;
-    height: 15px;
-    font-size: 9px;
-  }
-
-  .card-one {
-    left: 34%;
-    top: 44%;
-  }
-
-  .card-two {
-    left: 5%;
-    top: 54%;
-  }
-
-  .card-three {
-    left: 30%;
-    top: 64%;
-  }
-}
-
-/* =========================
-   TELAS ALTAS
-========================= */
-
-@media (min-height: 820px) {
-  .hero-content {
-    transform: translateY(48px);
-  }
-}
-
-/* =========================
-   TELAS BAIXAS
-========================= */
-
-@media (max-height: 720px) {
-  .hero-content {
-    transform: translateY(22px);
-  }
-
-  .logo {
-    margin-bottom: 18px;
-  }
-
-  h1 {
+    width: 86px;
     margin-bottom: 16px;
   }
 
+  h1 {
+    max-width: 250px;
+    font-size: 23.5px;
+    line-height: 1.12;
+    letter-spacing: -0.9px;
+    margin-bottom: 15px;
+  }
+
   p {
+    max-width: 232px;
+    font-size: 10.8px;
+    line-height: 1.42;
     margin-bottom: 24px;
   }
 
   .cta-button {
-    height: 56px;
+    max-width: 235px;
+    height: 50px;
+    font-size: 14px;
+    gap: 18px;
+  }
+
+  .cta-button .arrow {
+    font-size: 22px;
+  }
+
+  .floating-card {
+    min-width: 74px;
+    height: 38px;
+    padding: 6px 7px;
+  }
+
+  .floating-card strong {
+    font-size: 8.6px;
+  }
+
+  .floating-card small {
+    font-size: 7.2px;
+  }
+
+  .card-icon {
+    width: 13px;
+    height: 13px;
+    font-size: 8px;
+  }
+}
+
+/* TELAS ALTAS */
+
+@media (min-height: 820px) {
+  .hero-content {
+    transform: translateY(36px);
+  }
+}
+
+/* TELAS BAIXAS */
+
+@media (max-height: 720px) {
+  .hero-content {
+    transform: translateY(20px);
+  }
+
+  .logo {
+    margin-bottom: 14px;
+  }
+
+  h1 {
+    margin-bottom: 13px;
+  }
+
+  p {
+    margin-bottom: 20px;
+  }
+
+  .cta-button {
+    height: 48px;
   }
 }
