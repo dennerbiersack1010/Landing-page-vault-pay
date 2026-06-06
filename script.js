@@ -4,11 +4,18 @@ document.addEventListener("DOMContentLoaded", () => {
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker
       .register("/service-worker.js")
-      .then(() => {
-        console.log("Service Worker registrado com sucesso.");
+      .then((registration) => {
+        console.log("Service Worker registrado.");
+
+        registration.update();
+
+        if (registration.waiting) {
+          registration.waiting.postMessage({ type: "SKIP_WAITING" });
+        }
       })
       .catch((error) => {
         console.log("Erro ao registrar Service Worker:", error);
       });
   }
 });
+  
