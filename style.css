@@ -47,6 +47,27 @@ body {
   min-height: 100dvh;
 }
 
+/* ==================================================
+   TRAVA CONTRA DUPLICAÇÃO DA SEÇÃO FINAL
+   Remove qualquer bloco de teste antigo e qualquer
+   segunda seção "Como funciona" duplicada.
+================================================== */
+
+#secao-final-teste,
+section[id="secao-final-teste"],
+body > section.steps-section ~ section.steps-section {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  max-height: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
 /* HERO */
 
 .hero {
